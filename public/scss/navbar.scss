@@ -1,0 +1,34 @@
+.navbar {
+  background-color: #FFE3ED;
+  border-bottom: 1px solid #FFFFFF;
+  height: 77px;
+  &__brand {
+    height: 50px;
+    width: 50px;
+    margin-bottom: 10px;
+    background-size: 50px;
+    
+  }
+  &__mainLogo {
+    background-repeat: no-repeat;
+    background-image: url("/images/diary_logo.png");
+    
+  }
+  &__title {
+    margin-top: 15px;
+    margin-left: 10px;
+    font-size: 23px;
+    letter-spacing: 2px;
+    
+  }
+  &-nav {
+    & > li {
+      background-color: #FFFFFF;
+      margin-left: 20px;
+      margin-top: 20px;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}
