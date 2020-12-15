@@ -1,36 +1,3 @@
-.navbar {
-  background-color: #e9e9e9;
-  border-bottom: 1px solid rgba(0, 0, 0, .0975);
-  height: 77px;
-}
-.navbar__brand {
-  height: 50px;
-  width: 50px;
-  margin-bottom: 10px;
-  background-size: 50px;
-}
-.navbar__mainLogo {
-  background-repeat: no-repeat;
-  background-image: url("/images/diary_logo.png");
-}
-.navbar__title {
-  margin-top: 15px;
-  margin-left: 10px;
-  font-size: 23px;
-  letter-spacing: 2px;
-}
-.navbar-nav > li {
-  margin-left: 20px;
-  margin-top: 20px;
-}
-.navbar-nav > li:first-child {
-  margin-left: 0;
-}
-body {
-  background: #e9e9e9;
-  font-size: 14px;
-  color: #5e5e5e;
-}
 .main {
   max-width: 960px;
   margin: 0 auto;
