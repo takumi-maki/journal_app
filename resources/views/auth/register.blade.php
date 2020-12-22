@@ -37,7 +37,7 @@
             </form>
             <br>
             <div class="form-footer">
-                <p><a href="/users/sign_in">ログインする</a></p>
+                <p><a href="{{ route('login') }}">ログインする</a></p>
             </div>
         </div>
     </div>
