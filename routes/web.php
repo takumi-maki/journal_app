@@ -10,8 +10,18 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['middleware' => ['auth.admin']], function() {
+    Route::get('/admin', 'admin\AdminTopController@show');
+    Route::post('/admin/logout', 'admin\AdminLogoutController@logout');
+    Route::get('/admin/user_list', 'admin\ManageUserController@showUserList');
+    Route::get('/admin/user/{id}', 'admin\ManageUserController@showUserDetail');
+});
+
+Route::get('/admin/login', 'admin\AdminLoginController@showLoginForm');
+Route::post('/admin/login', 'admin\AdminLoginController@login');
 
 Route::get('/','PostsController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
