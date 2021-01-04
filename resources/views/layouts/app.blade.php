@@ -4,6 +4,8 @@
     <title>{{ config('app.name', 'journal_app') }}</title>
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <!-- スマホの拡大縮小設定　intital-scale=1拡大しない画面 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!--bootstrap-->
     <!--CSS -->
@@ -32,8 +34,10 @@
   <script src="{{ secure_asset('js/navbar.js') }}"></script>
   
   @yield('navbar')
-  
-  @yield('content')
+  <div class="container">
+    @yield('content')
+    
+  </div>
   
   @yield('footer')
   
