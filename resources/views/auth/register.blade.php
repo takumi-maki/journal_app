@@ -31,6 +31,9 @@
                         <strong>{{ $errors->first('password') }}</strong>
                     </span>
                 @endif
+                <div class="form-item">
+                    <input placeholder="Password confirmation" autocomplete="off" type="password" name="password_confirmation" required/>
+                </div>
                 <div class="button-panel">
                     <input type="submit" class="button" title="sign up" value="sign up" />
                 </div>
