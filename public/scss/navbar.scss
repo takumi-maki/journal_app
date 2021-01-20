@@ -1,33 +1,8 @@
+
 .navbar {
-  background-color: #e9e9e9;
-  border-bottom: 1px solid rgba(0,0,0,.0975);
-  height: 77px;
-  &__brand {
-    height: 50px;
-    width: 50px;
-    margin-bottom: 10px;
-    background-size: 50px;
-    
-  }
-  &__mainLogo {
-    background-repeat: no-repeat;
-    background-image: url("/images/diary_logo.png");
-    
-  }
-  &__title {
-    margin-top: 15px;
-    margin-left: 10px;
-    font-size: 23px;
-    letter-spacing: 2px;
-    
-  }
-  &-nav {
-    & > li {
-      margin-left: 20px;
-      margin-top: 20px;
-      &:first-child {
-        margin-left: 0;
-      }
-    }
-  }
+    background-color: #fffffe;
+}
+.navbar-light .navbar-toggler {
+    border-color: rgba(0,0,0,0);
+    outline: none;
 }

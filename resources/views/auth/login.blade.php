@@ -3,11 +3,11 @@
 
 @section('content')
 <div class="main">
-    <div class="card card-devise">
+    <div class="card devise-card">
         <div class="form-wrap">
             <div class="form-group text-center">
                 <h4>Log in</h4>
-                <p class="text-secondary">ログインする</p>
+                <p>ログインする</p>
             </div>
             <form class="new_user" id="new_user" action="{{ route('login') }}" accept-charset="UTF-8" method="post">
                 {{ csrf_field() }}
