@@ -1,101 +1,69 @@
 @extends('layouts.app')
-@include('navbar')
+<nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="/">
+        <img src="/images/diary_logo.png" class="d-inline-block align-top" alt="logo" />
+        <p class="navbar-text">journal</p>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-md-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/users/{{ Auth::user()->id }}"><i class="fas fa-user" style="margin-right: 1em;"></i>Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/posts/select"><i class="fas fa-pen" style="margin-right: 1em;"></i>write</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
 @include('footer')
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-lg-3 text-center">
-            @if($user->profile_photo)
-            <img class="round-img" src="{{ secure_asset('storage/user_images/'. $user->profile_photo) }}" />
-            @else
-            <img class="round-img" src="{{ secure_asset('/images/blank_profile.png') }}"/>
-            @endif
-            <h4  class="my-4">{{ $user->name }}</h4>
-            @if($user->id == Auth::user()->id)
-                <a class="btn btn-outline-dark common-btn edit-profile-btn" href="/users/edit">プロフィールを編集 <i class="fas fa-user-cog"></i></a>
-                <a class="btn btn-outline-dark common-btn edit-profile-btn" rel="nofollow" data-method="POST" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">ログアウト  <i class="fas fa-sign-out-alt"></i></a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
-            @endif
-            <div class="list-group">
-                <p class="list-group-item">{{ $user->email }}</p>
-                @if($user->introduction)
-                <p class="list-group-item">{{ $user->introduction }}</p>
+<div class="bg">
+    <div class="container">
+        <div class="row centered">
+            <div class="col">
+                @if ($user->profile_photo)
+                <p>
+                    <img class="round-img" src="{{ secure_asset('storage/suer_images/'. $user->profile_photo) }}" />
+                </p>
+                @else
+                <img class="round-img" src="{{ secure_asset('/images/blank_profile.png') }}" />
                 @endif
+                <h4 class="profile-text">{{ $user->name }}</h4>
+                <a class="btn btn-light common-btn edit-profile-btn" href="/users/edit">プロフィールを編集 <i class="fas fa-user"></i></a>
+                <a class="btn btn-light common-btn edit-profile-btn" rel="nofollow" data-method="POST" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">ログアウト  <i class="fas fa-sign-out-alt"></i></a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
+                <p class="profile-text">{{ $user->introduction }}</p>
             </div>
-        </div>
-        <div class="col-lg-9">
-            <h1 class="my-4">Page Heading
-                <small>Secondary Text</small>
-            </h1>
-            <div class="card mb-4">
-                <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap" />
-                <div class="card-body">
-                <h2 class="card-title">Post Title</h2></div>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-                <div class="button-panel">
-                    <input type="submit" class="button" title="read more" value="read more" />
-                </div>
-                <div class="card-footer text-muted">
-                    Posted on December 26, 2020 by
-                </div>
-            </div>
-            <di class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="#">Title1</a>
-                            </h4>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-                            <p>like 2</p>
-                        </div>
-                        <div class="button-panel">
-                            <input type="submit" class="button" title="Read more" value="Read more" />
-                        </div>
-                        <div class="card-footer text-muted">
-                            Posted on December 23, 2020 by
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="#">Title2</a>
-                            </h4>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-                            <p>like 2</p>
-                        </div>
-                        <div class="button-panel">
-                            <input type="submit" class="button" title="Read more" value="Read more" />
-                        </div>
-                        <div class="card-footer text-muted">
-                            Posted on December 23, 2020 by
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="#">Title3</a>
-                            </h4>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-                            <p>like 2</p>
-                        </div>
-                        <div class="button-panel">
-                            <input type="submit" class="button" title="Read more" value="Read more" />
-                        </div>
-                        <div class="card-footer text-muted">
-                            Posted on December 23, 2020 by
-                        </div>
-                    </div>
-                </div>
-            </di>
         </div>
     </div>
+</div>
+@section('content')
+<div class="row mt centered">
+    <div class="col">
+        <h5></h5>
+        <hr>
+    </div>
+</div>
+<div class="row-fluid m-2">
+        <div class="card-deck">
+    @foreach ($posts as $post)
+    <div class="col-lg-4 mt">
+            <div class="card">
+                    <img src="{{ secure_asset('storage/post_images/'. $post->post_image_path) }}" alt="card image" class="card-img-top" /> 
+                    <div class="card-body">
+                        <h4 class="card-title">{{ $post->post_title }}</h4>
+                        <p class="card-text">{{ \Illuminate\Support\Str::limit($post->post_introduction, 30, '...') }}</p>
+                        <a href="#"></a>
+                        <p class="card-footer"><small class="text-muted">投稿日:{{ $post->created_at->format('Y年m月d日') }}</small></p>
+                    </div>
+            </div>
+            </div>
+    @endforeach    
+        </div>    
+    
 </div>
 @endsection

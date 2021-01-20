@@ -1,14 +1,13 @@
 @extends('layouts.app')
 @include('navbar')
 @include('footer')
-@include('common.errors')
 @section('content')
-<div class="col-md-offset-2 mb-4 edit-profile-wrapper">
-    <div class="row">
-        <div class="col-md-8 mx-auto">
-            <div class="form-wrap">
-                <div class="form-group text-center">
-                    <h4>To edit</h4>
+<div class="main">
+@include('common.errors')
+    <div class="card devise-card">
+        <div class="form-wrap">
+            <div class="form-group text-center">
+                    <h4>edit</h4>
                     <p class="text-secondary">プロフィールを編集する</p>
                 </div>
                 <form class="edit_user" enctype="multipart/form-data" action="/users/update" accept-charset="UTF-8" method="post">
@@ -20,7 +19,7 @@
                         @if($user->profile_photo)
                         <img src="{{ secure_asset('storage/user_images/'. $user->profile_photo) }}" alt="avatar" width="300px" />
                         @endif
-                        <input type="file" name="user_profile_photo" value="{{ old('user_profile_photo', $user->id) }}" accept="image/jpeg, image/gif, image/png" />
+                        <input type="file" name="user_profile_photo" value="{{ old('user_profile_photo', $user->id) }}" accept="image/jpeg, image/gif, image/png, image/jpg" />
                     </div>
                     <div class="form-item">
                         <label for="user_name">名前</label>

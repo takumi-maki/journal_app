@@ -20,12 +20,26 @@ Route::group(['middleware' => ['auth.admin']], function() {
 Route::get('/admin/login', 'admin\AdminLoginController@showLoginForm');
 Route::post('/admin/login', 'admin\AdminLoginController@login');
 
+
+
 Route::get('/','PostsController@index');
 Auth::routes();
 
+Route::get('/home', 'PostsController@index');
+
 Route::get('/users/edit', 'UsersController@edit');
+
 Route::post('/users/update', 'UsersController@update');
 
-Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('/users/{user_id}', 'UsersController@show');
+
+
+Route::get('/posts/select', 'PostsController@selectType');
+
+Route::get('/posts/new/movie', 'PostsController@newMovie');
+
+Route::get('/posts/new/book', 'PostsController@newBook');
+
+Route::post('/posts', 'PostsController@store');
+
+

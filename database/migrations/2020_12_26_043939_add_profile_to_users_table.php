@@ -27,7 +27,7 @@ class AddProfileToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('profile_photo');
+            // $table->string('profile_photo');
             $table->string('introduction');
         });
     }
