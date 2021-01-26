@@ -48,28 +48,60 @@
   font-size: 12px;
   color: #33272a;
 }
-hr-s {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ffc6c7;
-  margin: 1em 0;
-  padding: 0;
-}
-hr-d {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px dashed #ffc6c7;
-  margin: 1em 0;
-  padding: 0;
-}
 .card {
   background: #faeee7;
   border: none;
 }
 .card-img-top {
   width: 100%;
-  height: 15em;
+  height: 30em;
   object-fit: cover;
+}
+.card-body {
+  text-align: center;
+  padding: 3em;
+  height: 15em;
+}
+a.card-next {
+  text-decoration: none;
+  color: #8c8c8c;
+  transition: border-color 0.3s;
+}
+a.card-next:hover {
+  color: #594a4e;
+  border-bottom: 1px dotted #594a4e;
+}
+.card-footer {
+  text-align: center;
+}
+.paginationWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 38px;
+  margin-bottom: 40px;
+}
+.paginationWrap ul.pagination {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+.paginationWrap ul.pagination li {
+  display: inline;
+  margin-right: 4px;
+}
+.paginationWrap ul.pagination li a {
+  color: #2f3859;
+  padding: 8px 14px;
+  text-decoration: none;
+}
+.paginationWrap ul.pagination li a.active {
+  background-color: #ffc6c7;
+  color: white;
+  border-radius: 40px;
+  width: 38px;
+  height: 38px;
+}
+.paginationWrap ul.pagination li a:hover:not(.active) {
+  background-color: #ffc6c7;
+  border-radius: 40px;
 }

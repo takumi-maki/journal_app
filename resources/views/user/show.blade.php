@@ -33,9 +33,11 @@
                 <img class="round-img" src="{{ secure_asset('/images/blank_profile.png') }}" />
                 @endif
                 <h4 class="profile-text">{{ $user->name }}</h4>
+                @if ($user->id == Auth::user()->id)
                 <a class="btn btn-light common-btn edit-profile-btn" href="/users/edit">プロフィールを編集 <i class="fas fa-user"></i></a>
                 <a class="btn btn-light common-btn edit-profile-btn" rel="nofollow" data-method="POST" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">ログアウト  <i class="fas fa-sign-out-alt"></i></a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
+                @endif
                 <p class="profile-text">{{ $user->introduction }}</p>
             </div>
         </div>
@@ -44,26 +46,30 @@
 @section('content')
 <div class="row mt centered">
     <div class="col">
-        <h5></h5>
+        <h5>投稿した記事</h5>
         <hr>
     </div>
 </div>
 <div class="row-fluid m-2">
-        <div class="card-deck">
-    @foreach ($posts as $post)
-    <div class="col-lg-4 mt">
-            <div class="card">
-                    <img src="{{ secure_asset('storage/post_images/'. $post->post_image_path) }}" alt="card image" class="card-img-top" /> 
-                    <div class="card-body">
-                        <h4 class="card-title">{{ $post->post_title }}</h4>
-                        <p class="card-text">{{ \Illuminate\Support\Str::limit($post->post_introduction, 30, '...') }}</p>
-                        <a href="#"></a>
-                        <p class="card-footer"><small class="text-muted">投稿日:{{ $post->created_at->format('Y年m月d日') }}</small></p>
-                    </div>
+    <div class="card-deck">
+        @foreach ($posts as $post)
+        @if($post->post_key == "open" || $user->id == Auth::user()->id)
+        <div class="col-lg-4 mt">
+                <div class="card">
+                @include('common.post_image_path')
+                <div class="card-body">
+                    <h5 class="card-title">{{ \Illuminate\Support\Str::limit($post->post_title, 50, '...') }}</h5>
+                    <br>
+                    <a class="card-next" href="{{ action('PostsController@show', $post->id) }}">この記事を読む</a>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">投稿日:{{ $post->created_at->format('Y年m月d日') }}</small>
+                </div>    
             </div>
-            </div>
-    @endforeach    
-        </div>    
-    
+        </div>
+        @endif
+        @endforeach 
+    </div>    
 </div>
+{{ $posts->links('pagination::default') }}
 @endsection

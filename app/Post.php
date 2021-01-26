@@ -21,7 +21,8 @@ class Post extends Model
         'post_three',
         'post_summary',
         'post_last_greeting',
-        'post_comment'
+        'post_comment',
+        'post_key'
         ];
     public function user()
     {

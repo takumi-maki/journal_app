@@ -33,13 +33,15 @@ Route::post('/users/update', 'UsersController@update');
 
 Route::get('/users/{user_id}', 'UsersController@show');
 
-
+// post_typeを選択する画面を表示
 Route::get('/posts/select', 'PostsController@selectType');
 
+// post_type別の投稿画面を表示
 Route::get('/posts/new/movie', 'PostsController@newMovie');
 
 Route::get('/posts/new/book', 'PostsController@newBook');
 
+
 Route::post('/posts', 'PostsController@store');
 
-
+Route::resource('posts', 'PostsController', ['only' => ['show']]);

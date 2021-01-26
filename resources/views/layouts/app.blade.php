@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <!-- Styles -->
     <link href="{{ secure_asset('css/application.css') }}" rel="stylesheet">
-
+  
   </head>
 
 <body>
@@ -31,16 +31,14 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"></script>
   
-  <script src="{{ secure_asset('js/navbar.js') }}"></script>
   
   @yield('navbar')
   <div class="container">
     @yield('content')
-    
   </div>
   
   @yield('footer')
   
-  
+  @include('common.hidearia')
 </body>
 </html>

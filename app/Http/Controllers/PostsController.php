@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Auth;
+use App\User;
 use Validator;
 
 use Illuminate\Http\Request;
@@ -14,16 +15,13 @@ class PostsController extends Controller
     {
         $this->middleware('auth');
     }
-    public function index(Request $request)
+    public function index()
     {
-        $posts = Post::all()->sortByDesc('updated_at');
-        if(count($posts) > 0) {
-            $headline = $posts->shift();
-        } else {
-            $headline = null;
-        }
+        $posts = Post::where('post_key', 'open')
+        ->orderBy('created_at', 'desc')
+        ->paginate(10);
         
-        return view('post/index', ['$post' => $posts, 'headline' => $headline]);
+        return view('post/index', ['posts' => $posts]);
     }
     public function selectType()
     {
@@ -37,14 +35,14 @@ class PostsController extends Controller
     {
         return view('post/new/book');
     }
-    
-    
+
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(),[
             'post_title' => 'required',
             'post_first_greeting' => 'required',
             'post_introduction' => 'required',
+            'post_story' => 'required',
             'post_one' => 'required',
             'post_summary' => 'required',
             'post_last_greeting' => 'required'
@@ -55,6 +53,7 @@ class PostsController extends Controller
                 // 入力情報を保持したまま前の画面に戻る
                 return redirect()->back()->withErrors($validator->errors())->withInput();
             }
+            
             $post = new Post;
             $form = $request->all();
             if (isset($form['image'])) {
@@ -70,10 +69,14 @@ class PostsController extends Controller
             $post->user_id = Auth::user()->id;
             $post->save();
             
-            
-            
             return redirect('/');
     }
     
+    public function show($post_id, User $user)
+    {
+        $post = Post::findOrFail($post_id);
+        return view('post/show', ['post' => $post,'user' => $user]);
+        
+    }
     
 }

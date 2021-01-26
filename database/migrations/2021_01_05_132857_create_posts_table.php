@@ -24,7 +24,7 @@ class CreatePostsTable extends Migration
             $table->string('post_two')->nullable();
             $table->string('post_three')->nullable();
             $table->string('post_summary');
-            $table->string('post_information')->nullable();
+            $table->string('post_information');
             $table->string('post_character')->nullable();
             $table->string('post_story')->nullable();
             $table->string('post_spoiler')->nullable();
