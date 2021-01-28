@@ -12,8 +12,11 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   letter-spacing: 1px;
   color: #594a4e;
+  word-break: break-all;
 }
 p {
+  word-break: break-all;
+  white-space: pre-wrap;
   color: #594a4e;
 }
 .devise-card {

@@ -50,9 +50,11 @@
                 <p class="mt">{{ $post->post_character }}</p>
                 @endif
                 
-                <h7 class="paragrah">作品のストーリー</h7>
+                @if ($post->post_story)
+                <h7 class="paragrah">作品の物語</h7>
                 <p class="mt">{{ $post->post_story }}</p>
-            
+                @endif
+                
                 @if ($post->post_spoiler)
                 <div class="hidden_box">
                     <input type="checkbox" id="label1" />

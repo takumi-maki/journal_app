@@ -5,3 +5,27 @@
   border-color: rgba(0, 0, 0, 0);
   outline: none;
 }
+.site-navbar {
+  margin-bottom: 0px;
+  z-index: 1999;
+  width: 100%;
+  background: #fffffe;
+  font-family: "B612 Mono", monospace;
+}
+.site-navbar .site-navigation .site-menu li {
+  display: inline-block;
+}
+.nav-type {
+  background: #fffffe;
+  border: none;
+  color: #8c8c8c;
+  padding: 1.5em;
+  position: relative;
+  outline: none;
+  text-transform: uppercase;
+  transition: 0.3s;
+  letter-spacing: 0.05rem;
+}
+.nav-type:hover {
+  color: #594a4e;
+}
