@@ -15,13 +15,76 @@ class PostsController extends Controller
     {
         $this->middleware('auth');
     }
-    public function index()
+    public function index(Request $request)
     {
-        $posts = Post::where('post_key', 'open')
-        ->orderBy('created_at', 'desc')
-        ->paginate(10);
+        $type = $request->type;
+        if($type == 'all' || $type == null){
+            $posts = Post::where('post_key', 'open');
+        }
+        elseif($type == 'book'){
+            $posts = Post::where([
+                ['post_type', 'book'],
+                ['post_key', 'open']
+                ]);
+        }
+        elseif($type == 'business'){
+            $posts = Post::where([
+                ['post_type', 'business'],
+                ['post_key', 'open']
+                ]);
+        }
+        elseif($type == 'daily'){
+            $posts = Post::where([
+                ['post_type', 'daily'],
+                ['post_key', 'open']
+                ]);
+        }
+        elseif($type == 'hobby'){
+            $posts = Post::where([
+                ['post_type', 'hobby'],
+                ['post_key', 'open']
+                ]);
+        }
+        elseif($type == 'leaning'){
+            $posts = Post::where([
+                ['post_type', 'leaning'],
+                ['post_key', 'open']
+                ]);
+        }
+        elseif($type == 'movie'){
+            $posts = Post::where([
+                ['post_type', 'movie'],
+                ['post_key', 'open']
+                ]);
+        }
+        elseif($type == 'society'){
+            $posts = Post::where([
+                ['post_type', 'society'],
+                ['post_key', 'open']
+                ]);
+        }
+        elseif($type == 'sport'){
+            $posts = Post::where([
+                ['post_type', 'sport'],
+                ['post_key', 'open']
+                ]);
+        }
+        elseif($type == 'travel'){
+            $posts = Post::where([
+                ['post_type', 'travel'],
+                ['post_key', 'open']
+                ]);
+        }
         
-        return view('post/index', ['posts' => $posts]);
+        $posts = $posts->orderBy('created_at', 'desc')->paginate(10);
+        
+        if(count($posts) > 0) {
+            $headline = $posts->shift();
+        } else {
+            $headline = null;
+        }
+        
+        return view('post/index', ['posts' => $posts, 'headline' => $headline, $type => 'type']);
     }
     public function selectType()
     {

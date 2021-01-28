@@ -39,6 +39,5 @@
   
   @yield('footer')
   
-  @include('common.hidearia')
 </body>
 </html>

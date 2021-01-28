@@ -11,9 +11,10 @@
                 {{ csrf_field() }}
                 <input type="hidden" name="post_type" value="movie" />
                 <div class="form-group">
-                    <label for="image">画像や写真を貼る</label><br>
-                    <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：画像や写真がなければこちらで指定した画像を挿入します。)</small>
-                    <input type="file" name="image" accept="image/jpeg, image/gif, image/png, image/jpg" />
+                    <label for="post_image_path">画像や写真を貼る</label><br>
+                    <i class="far fa-hand-point-right "></i><small class="text-secondary">　(ヒント：画像や写真がなければこちらで指定した画像を挿入します。また画像ファイルのサイズは2KBまでです。)<br></small>
+                    
+                    <input type="file" name="post_image_path" accept="image/jpeg, image/gif, image/png, image/jpg" />
                 </div>
                 <div class="form-item">
                     <label for="post_title">※タイトル</label>
@@ -46,7 +47,7 @@
                 </div>
                 <br>
                 <div class="form-item">
-                    <label for="post_story">※作品の物語</label>
+                    <label for="post_story">作品の物語</label>
                     <textarea rows="5" text="text" name="post_story">{{ old('post_story') }}</textarea>
                     <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：どんな内容の物語でしたか？)</small>
                 </div>
@@ -112,12 +113,5 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
-  $('#post_image').bind('change', function() {
-    var size_in_megabytes = this.files[0].size/1024/1024;
-    if (size_in_megabytes > 1) {
-      alert('ファイルサイズの最大は1MBまでです。違う画像を選んでください。');
-    }
-  });
-</script>
+
 @endsection

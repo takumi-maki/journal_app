@@ -2,26 +2,54 @@
 @include('navbar')
 @include('footer')
 @section('content')
-@foreach($posts as $post)
-<div class="col-md-8 mx-auto">
-    <div class="index-card-wrap">
-        <div class="index-card-index">
-            <div class="card-header-index align-items-center d-flex">
-                <a class="no-text-decoration" href="/users/{{ $post->user->id }}">
-                    @if($post->user->post_image_path)
-                        <img class="post-profile-icon round-img mr-4" src="{{ secure_asset('storage/user_images/'. $post->user->profile_photo) }}" />
-                    @else
-                        <img class="post-profile-icon round-img mr-4" src="{{ secure_asset('/images/blank_profile.png') }}" />
-                    @endif
-                <span>{{ $post->user->name }}</span>
-                </a>
-            </div>
-            
-        </div>
+@include('common.banner')
+<div class="main">
+@if(!is_null($headline))
+<div class="row align-items-center my-5">
+  <div class="col-lg-7">
+    <h6 style="text-align: left;">{{ $headline->post_type }}</h6>
+    @if($headline->post_image_path)
+        <img src="{{ secure_asset('storage/post_images/'. $headline->post_image_path) }}" alt="post-img" class="post-img" />
+    @elseif ($headline->post_image_path == null && $headline->post_type == "movie")
+        <img src="{{ secure_asset('/images/movie.jpg' ) }}" alt="post-img" class="post-img" /> 
+    @elseif ($headline->post_image_path == null && $headline->post_type == "book")    
+        <img src="{{ secure_asset('/images/book.jpg' ) }}" alt="post-img" class="post-img" /> 
+    @endif
+  </div>
+  <div class="col-lg-5">
+    <h3 class="card-title mt">{{ \Illuminate\Support\Str::limit($headline->post_title, 50, '...') }}</h3>
+    <p class="card-text p-1">{{ \Illuminate\Support\Str::limit($headline->post_first_greeting, 130, '...') }}</p>
+    <p class="card-text p-1">{{ \Illuminate\Support\Str::limit($headline->post_introduction, 130, '...') }}</p>
+    <a class="card-next" href="{{ action('PostsController@show', $headline->id) }}">この記事を読む</a>
+    <p class="card-text p-1">投稿日:{{ $headline->created_at->format('Y年m月d日') }}</p>
+    <div class="profile-wrap">
+        <a class="no-text-decoration" href="/users/{{ $headline->user->id }}">
+            @if ($headline->user->profile_photo)
+            <img class="post-profile-icon round-img mr-4" src="{{ secure_asset('storage/user_images/'. $headline->user->profile_photo) }}" />
+            @else 
+            <img class="post-profile-icon round-img mr-4" src="{{ secure_asset('/images/blank_profile.png') }}" />
+            @endif
+        <span>{{ $headline->user->name }}</span>
+        </a>
+        <br class="mt">
+        <h7>{{ $headline->user->introduction }}</h7>
     </div>
+  </div>
 </div>
-<div class="col-md-2 mx-auto">
-    
-</div>
+@endif
+<!-- /.row -->
+
+<!-- Call to Action Well -->
+<hr class="mt">
+
+<!-- Content Row -->
+<div class="row">
+@foreach ($posts as $post)
+  <div class="col-md-6 mb-5">
+    @include('common.card')
+  </div>
 @endforeach
+</div>
+
+{{ $posts->links('pagination::default') }}
 @endsection

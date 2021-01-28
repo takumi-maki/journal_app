@@ -10,10 +10,10 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-md-auto">
-          <li class="nav-item mx-0 mx-lg-1">
+          <li class="nav-item">
             <a class="nav-link" href="/users/{{ Auth::user()->id }}"><i class="fas fa-user" style="margin-right: 1em;"></i>Home</a>
           </li>
-          <li class="nav-item  mx-0 mx-lg-1">
+          <li class="nav-item">
             <a class="nav-link" href="/posts/select"><i class="fas fa-pen" style="margin-right: 1em;"></i>write</a>
           </li>
         </ul>

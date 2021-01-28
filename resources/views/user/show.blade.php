@@ -26,9 +26,7 @@
         <div class="row centered">
             <div class="col">
                 @if ($user->profile_photo)
-                <p>
-                    <img class="round-img" src="{{ secure_asset('storage/suer_images/'. $user->profile_photo) }}" />
-                </p>
+                <img class="round-img" src="{{ secure_asset('storage/user_images/'. $user->profile_photo) }}" />
                 @else
                 <img class="round-img" src="{{ secure_asset('/images/blank_profile.png') }}" />
                 @endif
@@ -50,26 +48,14 @@
         <hr>
     </div>
 </div>
-<div class="row-fluid m-2">
-    <div class="card-deck">
-        @foreach ($posts as $post)
-        @if($post->post_key == "open" || $user->id == Auth::user()->id)
-        <div class="col-lg-4 mt">
-                <div class="card">
-                @include('common.post_image_path')
-                <div class="card-body">
-                    <h5 class="card-title">{{ \Illuminate\Support\Str::limit($post->post_title, 50, '...') }}</h5>
-                    <br>
-                    <a class="card-next" href="{{ action('PostsController@show', $post->id) }}">この記事を読む</a>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">投稿日:{{ $post->created_at->format('Y年m月d日') }}</small>
-                </div>    
-            </div>
-        </div>
-        @endif
-        @endforeach 
-    </div>    
+<div class="row">
+    @foreach ($posts as $post)
+    @if($post->post_key == "open" || $user->id == Auth::user()->id)
+    <div class="col-md-4 mb-5">
+        @include('common.card')
+    </div>
+    @endif
+    @endforeach 
 </div>
 {{ $posts->links('pagination::default') }}
 @endsection

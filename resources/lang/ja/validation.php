@@ -157,10 +157,11 @@ return [
     'attributes' => [
         'post_title' => 'タイトル',
         'post_first_greeting' => 'はじめのあいさつ',
-        'post_story' => '映画の物語',
+        'post_introduction' => '話題の導入',
         'post_one' => '映画をみて思ったことや気付いたこと①',
         'post_summary' => 'まとめ', 
         'post_last_greeting' => '最後のあいさつ',
+        'post_image_path' => '画像',
         ],
 
 ];
