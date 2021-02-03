@@ -2,18 +2,15 @@
 @include('navbar')
 @include('footer')
 @section('content')
-
-<!-- もしpost_typeが"lock"　かつ　閲覧ユーザーが本人でなければ　以下を表示する -->
-@if($post->post_key == "lock" && Auth::user()->id != $post->user_id)
-<h4>こちらは非公開の記事です</h4>
-
-@else
 <body data-spy="scroll" data-target="#scrollspy" data-offset="20">
 <div class="main">
     <div class="row">
-
         <div class="col-md-9">
+            <h5 class="mt mb-2">確認画面</h5>
+            <form class="new_post" enctype="multipart/form-data" action="{{ action('PostsController@update') }}" accept-charset="UTF-8" method="post">
+                {{ csrf_field() }}
             <div id="top">
+                
                 @include('common.post_image_path')
                 <h3 class="post_title mt">{{ $post->post_title }}</h3>
                 
@@ -30,7 +27,7 @@
                     <span>{{ $post->user->name }}</span>
                     </a>
                 </div>
-                <small>投稿日:{{ $post->created_at->format('Y年m月d日') }}</small>
+                
                 <hr>
             </div>
             <div class="body">
@@ -87,7 +84,6 @@
                     <p class="mt">{{ $post->post_last_greeting }}</p>
                 </div>
             </div>
-            <hr>
         </div>
         <nav class="col-md-3 d-none d-md-block" id="scrollspy">
             <ul class="nav nav nav-pills flex-column sticky-top">
@@ -97,10 +93,15 @@
                 <li class="nav-item"><a href="#summary" class="nav-link">まとめ</a></li>
             </ul>
         </nav>
+            <div class="col post-button-panel">
+                <button type="button" class="button" name="back" onclick=history.back()><i class="fas fa-chevron-left mr-2"></i>戻る</button>
+                <button type="submit" class="button" name="submit">投稿する<i class="fas fa-chevron-right ml-2"></i></button>
+            </div>
+        </form>
     </div>
+    
 </div>
-@endif
+<hr>
 </body>
-
 
 @endsection
