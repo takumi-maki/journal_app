@@ -22,6 +22,7 @@ class Post extends Model
         'post_summary',
         'post_last_greeting',
         'post_comment',
+        'post_image_path',
         'post_key'
         ];
     public function user()

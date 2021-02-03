@@ -82,6 +82,7 @@ p {
     margin: auto;
     background: #ffc6c7;
     border: none;
+    border-radius: 5px;
     color: #ffffff;
     height: 50px;
     font-size: 1.2em;
@@ -94,6 +95,26 @@ p {
     outline: none;
 }
 .button-panel .button:hover {
+    background: #ff8ba7;
+}
+
+.post-button-panel .button {
+    margin: 0 auto;
+    background: #ffc6c7;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    height: 40px;
+    width: 120px;
+    font-size: 1.2em;
+    letter-spacing: 0.05em;
+    text-align: center;
+    text-transform: capitalize;
+    transition: background 0.3s ease-in-out;
+    padding: 0.5em;
+    outline: none;
+}
+.post-button-panel .button:hover {
     background: #ff8ba7;
 }
 

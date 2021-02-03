@@ -6,32 +6,32 @@
     <div class="card devise-card">
         <div class="form-group">
             <h4 align="center">write</h4>
-            <p class="text-center">映画を観て思ったことを書こう。感想は人それぞれです。</p>
-            <form class="new_movie" id="new_movie" enctype="multipart/form-data" action="{{ url('posts') }}" accept-charset="UTF-8" method="post">
+            <p class="text-center">映画を観て思ったことを書きましょう。感想は人それぞれです。</p>
+            <form class="new_post" enctype="multipart/form-data" action="{{ action('PostsController@confirm') }}" accept-charset="UTF-8" method="post">
                 {{ csrf_field() }}
                 <input type="hidden" name="post_type" value="movie" />
                 <div class="form-group">
                     <label for="post_image_path">画像や写真を貼る</label><br>
-                    <i class="far fa-hand-point-right "></i><small class="text-secondary">　(ヒント：画像や写真がなければこちらで指定した画像を挿入します。また画像ファイルのサイズは2KBまでです。)<br></small>
+                    <i class="far fa-hand-point-right "></i><small class="text-secondary">　(ヒント：画像や写真がなければこちらで指定した画像を挿入します。また画像ファイルのサイズは2MBまでです。)<br></small>
                     
                     <input type="file" name="post_image_path" accept="image/jpeg, image/gif, image/png, image/jpg" />
                 </div>
                 <div class="form-item">
-                    <label for="post_title">※タイトル</label>
+                    <label for="post_title">必須<i class="fas fa-check-square ml-1 mr-1"></i>：タイトル</label>
                     <textarea rows="2" text="text" name="post_title">{{ old('post_title') }}</textarea>
                     <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：映画のタイトルを教えてくれますか？)</small>
                 </div>
                 <br>
                 <div class="form-item">
-                    <label for="post_first_greeting">※はじめのあいさつ</label>
+                    <label for="post_first_greeting">必須<i class="fas fa-check-square ml-1 mr-1"></i>：はじめのあいさつ</label>
                     <textarea rows="2" text="text" name="post_first_greeting">{{ old('post_first_greeting') }}</textarea> 
-                    <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：簡単で良いので、自己紹介とあなたの近況を教えてくれますか？)</small>
+                    <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：簡単で良いので、自己紹介と近況を教えてくれますか？)</small>
                 </div>
                 <br>
                 <div class="form-item">
-                    <label for="post_introduction">※話題の導入</label>
+                    <label for="post_introduction">必須<i class="fas fa-check-square ml-1 mr-1"></i>：話題の導入</label>
                     <textarea rows="5" text="text" name="post_introduction">{{ old('post_introduction') }}</textarea>
-                    <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：なぜその映画を観たのですか？　誰と一緒に観ましたか？　等)</small>
+                    <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：なぜその映画を観たのですか？　誰と一緒に観ましたか？ どこで観ましたか？　等)</small>
                 </div>
                 <br>
                 <div class="form-item">
@@ -59,7 +59,7 @@
                 </div>
                 <br>
                 <div class="form-item">
-                    <label for="post_one">※映画をみて思ったことや気付いたこと①</label>
+                    <label for="post_one">必須<i class="fas fa-check-square ml-1 mr-1"></i>：映画をみて思ったことや気付いたこと①</label>
                     <textarea rows="10" text="text" name="post_one">{{ old('post_one') }}</textarea>
                     <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：1つめの感想とそう思った理由を教えてくれますか？)</small>
                 </div>
@@ -77,13 +77,13 @@
                 </div>
                 <br>
                 <div class="form-item">
-                    <label for="post_summary">※まとめ</label>
+                    <label for="post_summary">必須<i class="fas fa-check-square ml-1 mr-1"></i>：まとめ</label>
                     <textarea rows="5" text="text" name="post_summary">{{ old('post_summary') }}</textarea>
                     <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：観た感想をまとめてみてください。)</small>
                 </div>
                 <br>
                 <div class="form-item">
-                    <label for="post_last_greeting">※最後のあいさつ</label>
+                    <label for="post_last_greeting">必須<i class="fas fa-check-square ml-1 mr-1"></i>：最後のあいさつ</label>
                     <textarea rows="2" text="text" name="post_last_greeting">{{ old('post_last_greeting') }}</textarea>
                     <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：締めのあいさつをしていただけますか？)</small>
                 </div>
@@ -107,7 +107,7 @@
                 </div>
                 <br>
                 <div class="button-panel">
-                    <input type="submit" class="button" name="submit" value="post" >
+                    <input type="submit" class="button" name="submit" value="確認する" />
                 </div>
             </form>
         </div>

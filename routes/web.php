@@ -22,16 +22,19 @@ Route::post('/admin/login', 'admin\AdminLoginController@login');
 
 
 
+// 記事一覧ページを表示
 Route::get('/','PostsController@index');
 Auth::routes();
 
 Route::get('/home', 'PostsController@index');
+
 
 Route::get('/users/edit', 'UsersController@edit');
 
 Route::post('/users/update', 'UsersController@update');
 
 Route::get('/users/{user_id}', 'UsersController@show');
+
 
 // post_typeを選択する画面を表示
 Route::get('/posts/select', 'PostsController@selectType');
@@ -41,7 +44,15 @@ Route::get('/posts/new/movie', 'PostsController@newMovie');
 
 Route::get('/posts/new/book', 'PostsController@newBook');
 
+// 確認ページでセッションに$postを保持
+Route::post('/posts/confirm', 'PostsController@confirm');
 
-Route::post('/posts', 'PostsController@store');
+// 確認ページで$postを保存
+Route::post('/posts/update', 'PostsController@update');
 
+// 投稿完了ページを表示
+Route::get('/posts/thanks', 'PostsController@complete');
+
+
+// 記事の詳細ページを表示
 Route::resource('posts', 'PostsController', ['only' => ['show']]);
