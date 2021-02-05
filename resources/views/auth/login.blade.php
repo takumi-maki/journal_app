@@ -7,7 +7,7 @@
         <div class="form-wrap">
             <div class="form-group text-center">
                 <h4>Log in</h4>
-                <p>ログインする</p>
+                <p>ログイン</p>
             </div>
             <form class="new_user" id="new_user" action="{{ route('login') }}" accept-charset="UTF-8" method="post">
                 {{ csrf_field() }}

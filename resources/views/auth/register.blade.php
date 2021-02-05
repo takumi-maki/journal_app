@@ -6,7 +6,7 @@
         <div class="form-wrap">
             <div class="form-group text-center">
                 <h4>Sign up</h4>
-                <p>アカウントを作ろう</p>
+                <p>アカウントをつくりましょう</p>
             </div>
             <form method="POST" action="{{ route('register') }}">
                 {{ csrf_field() }}

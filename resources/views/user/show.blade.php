@@ -1,8 +1,7 @@
 @extends('layouts.app')
 <nav class="navbar navbar-expand-lg navbar-light">
       <a class="navbar-brand" href="/">
-        <img src="/images/diary_logo.png" class="d-inline-block align-top" alt="logo" />
-        <p class="navbar-text">journal</p>
+        <img src="/images/logo.png" class="d-inline-block align-top" alt="logo" />
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

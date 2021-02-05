@@ -1,95 +1,64 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+@extends('layouts.app')
+@include('footer')
+@section('content')
+<div class="main">
+    <div class="card">
+        <div class="top-wrap">
+            <div class="logo centered">
+                <img src="{{ secure_asset('/images/top_logo.png' ) }}" alt="top_logo_img" class="top-logo-img" />
+                <hr>
+                <img src="{{ secure_asset('/images/show_header.jpg' ) }}" alt="header_img" class="top-page-img mt" />
+            </div> 
+            <div class="button-panel mt">
+                <p class="centered">アカウントをつくって、記事を投稿しましょう</p>
+                <br>
+                <a href="{{ route('register') }}">
+                    <input type="submit" class="button" title="sign up" value="sign up" />
+                </a>
+                <div class="form-footer centered mt">
+                    <p>すでにアカウントがある人はこちらからです</p>
+                    <p><a href="{{ route('login') }}">ログインする</a></p>
                 </div>
             </div>
+            <hr>
+            
+            <h6 class="mt">jounal とは</h6>
+            <p>記事を自由に投稿して閲覧することができるプラットフォームです。
+            </p>
+            <br>
+            <p>本を読んだあと、映画を観たあと、旅行をしたあと。自分が考えたこと、思ったことを記事にしてまとめてみませんか？</p>
+            <p>その記事を誰かに伝えて良いですし、1人で大事にしても良いです。</p>
+            <p>感想は人それぞれです。</p>
+            <br>
+            <hr>
+            
+            <h6 class="mt">journal 投稿の流れ</h6>
+            <p>記事のジャンルを選ぶ</p>
+            <img src="{{ secure_asset('/images/select.png' ) }}" alt="select_img" class="top-page-img" />
+            <h6 class="mt">↓</h6>
+            <p>投稿画面のフレームワークに沿って文章を書く</p>
+            <img src="{{ secure_asset('/images/movie_form.png' ) }}" alt="movie_form_img" class="top-page-img" />
+            <h6 class="mt">↓</h6>
+            <p>投稿完了</p>
+            <img src="{{ secure_asset('/images/complete.png' ) }}" alt="complete_img" class="top-page-img" />
+            <br>
+            <hr>
+            
+            <h6 class="mt">jounal の特徴</h6>
+            <p>1.フレームワークに沿って文章を書けば、1000文字以上の記事を簡単につくれます。</p>
+            <br>
+            <p>2.他の人の記事にイイネを押して評価をすることができます。</p>
+            <br>
+            <p>3.記事を非公開にして、自分だけの日記用として活用することもできます。</p>
+            <br>
+            <hr>
+            
+            <h6 class="mt">jounal の思い</h6>
+            <p>文章を書くのが苦手な方でも、手軽に記事が書けるようなアプリをつくりました。</p>
+            <p>SNSのタイムラインに流すような短い文章ではなく、会社や学校に提出するようなWEBのコピペの文章でもない。</p>
+            <p>思い出の詰まった、あなただけの大切な記事を投稿してみてください。</p>
         </div>
-    </body>
-</html>
+    </div>
+</div>
+            
+@endsection

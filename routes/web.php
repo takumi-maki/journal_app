@@ -21,6 +21,9 @@ Route::get('/admin/login', 'admin\AdminLoginController@showLoginForm');
 Route::post('/admin/login', 'admin\AdminLoginController@login');
 
 
+Route::get('/welcome', function(){
+    return view('welcome');
+});
 
 // 記事一覧ページを表示
 Route::get('/','PostsController@index');
@@ -48,7 +51,7 @@ Route::get('/posts/new/book', 'PostsController@newBook');
 Route::post('/posts/confirm', 'PostsController@confirm');
 
 // 確認ページで$postを保存
-Route::post('/posts/update', 'PostsController@update');
+Route::post('/posts/send', 'PostsController@send');
 
 // 投稿完了ページを表示
 Route::get('/posts/thanks', 'PostsController@complete');
