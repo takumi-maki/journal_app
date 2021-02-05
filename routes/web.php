@@ -27,6 +27,7 @@ Route::get('/welcome', function(){
 
 // 記事一覧ページを表示
 Route::get('/','PostsController@index');
+
 Auth::routes();
 
 Route::get('/home', 'PostsController@index');
