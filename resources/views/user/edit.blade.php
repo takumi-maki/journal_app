@@ -8,16 +8,17 @@
         <div class="form-wrap">
             <div class="form-group text-center">
                     <h4>edit</h4>
-                    <p class="text-secondary">プロフィールを編集する</p>
+                    <p>プロフィールを編集する</p>
                 </div>
                 <form class="edit_user" enctype="multipart/form-data" action="/users/update" accept-charset="UTF-8" method="post">
                     <input name="utf8" type="hidden" value="&#x2713;" />
                     <input type="hidden" name="id" value="{{ $user->id }}" />
                     {{ csrf_field() }}
-                    <div class="form-group">
+                    <div class="form-group centered">
                         <label for="user_profile_photo">プロフィール写真</label>
+                        <br>
                         @if($user->profile_photo)
-                        <img src="{{ secure_asset('storage/user_images/'. $user->profile_photo) }}" alt="avatar" width="300px" />
+                        <img src="{{ secure_asset('storage/user_images/'. $user->profile_photo) }}" alt="avatar" width="100%" class="" />
                         @endif
                         <input type="file" name="user_profile_photo" value="{{ old('user_profile_photo', $user->id) }}" accept="image/jpeg, image/gif, image/png, image/jpg" />
                     </div>

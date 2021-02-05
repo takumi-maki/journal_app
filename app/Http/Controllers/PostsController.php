@@ -128,13 +128,14 @@ class PostsController extends Controller
         } else {
             $post->post_image_path = null;
         }
+        unset($post['_token']);
         
         $request->session()->put('post', $post);
         // return dd($post);
         return view('post/confirm', ['post' => $post]);
     }
     
-    public function update(Request $request){
+    public function send(Request $request){
         $post = $request->session()->get('post');
         $post->save();
         return redirect('posts/thanks');

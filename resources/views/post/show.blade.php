@@ -12,7 +12,7 @@
 <div class="main">
     <div class="row">
 
-        <div class="col-md-9">
+        <div class="col-md-9 mt">
             <div id="top">
                 @include('common.post_image_path')
                 <h3 class="post_title mt">{{ $post->post_title }}</h3>
@@ -87,7 +87,6 @@
                     <p class="mt">{{ $post->post_last_greeting }}</p>
                 </div>
             </div>
-            <hr>
         </div>
         <nav class="col-md-3 d-none d-md-block" id="scrollspy">
             <ul class="nav nav nav-pills flex-column sticky-top">

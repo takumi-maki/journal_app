@@ -7,12 +7,20 @@
   border-radius: 50px;
   margin: auto;
 }
-.post-img {
-  border: 3px solid rgba(0, 0, 0, 0.1);
+.headline-img {
+  border: 3px solid #faeee7;
   border-radius: 6px;
   box-sizing: border-box;
   width: 100%;
   height: 400px;
+  object-fit: cover;
+}
+.post-img {
+  border: 3px solid #faeee7;
+  border-radius: 6px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 200px;
   object-fit: cover;
 }
 .nav-item a {

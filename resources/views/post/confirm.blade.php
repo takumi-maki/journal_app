@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-md-9">
             <h5 class="mt mb-2">確認画面</h5>
-            <form class="new_post" enctype="multipart/form-data" action="{{ action('PostsController@update') }}" accept-charset="UTF-8" method="post">
+            <form class="new_post" enctype="multipart/form-data" action="{{ action('PostsController@send') }}" accept-charset="UTF-8" method="post">
                 {{ csrf_field() }}
             <div id="top">
                 
@@ -101,7 +101,6 @@
     </div>
     
 </div>
-<hr>
 </body>
 
 @endsection
