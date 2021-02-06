@@ -146,6 +146,13 @@ class PostsController extends Controller
         return view('post/complete');
     }
     
+    public function destroy($post_id)
+    {
+        $post = Post::find($post_id);
+        $post->delete();
+        return redirect('/');
+    }
+    
     public function show($post_id, User $user)
     {
 

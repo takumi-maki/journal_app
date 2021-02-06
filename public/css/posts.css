@@ -148,3 +148,16 @@
   height: auto;
   opacity: 1;
 }
+.delete-post-icon {
+  background-image: url("/images/parts9.png");
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  background-size: 20px !important;
+  color: #33272a;
+  font-size: 20px;
+}
+.delete-post-icon span {
+  display: inline-block;
+  vertical-align: top;
+}
