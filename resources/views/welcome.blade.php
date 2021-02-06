@@ -35,19 +35,25 @@
             <h6 class="mt">journal 投稿の流れ</h6>
             <p>記事のジャンルを選ぶ</p>
             <img src="{{ secure_asset('/images/select.png' ) }}" alt="select_img" class="top-page-img" />
-            <h6 class="mt">↓</h6>
+            <div class="centered mt"><i class="fas fa-arrow-down"></i></div>
             <p>投稿画面のフレームワークに沿って文章を書く</p>
             <img src="{{ secure_asset('/images/movie_form.png' ) }}" alt="movie_form_img" class="top-page-img" />
-            <h6 class="mt">↓</h6>
+            <div class="centered mt"><i class="fas fa-arrow-down"></i></div>
             <p>投稿完了</p>
             <img src="{{ secure_asset('/images/complete.png' ) }}" alt="complete_img" class="top-page-img" />
             <br>
             <hr>
             
             <h6 class="mt">jounal の特徴</h6>
+            <div class="centered"><i class="fas fa-pen fa-2x"></i></div>
+            <br>
             <p>1.フレームワークに沿って文章を書けば、1000文字以上の記事を簡単につくれます。</p>
             <br>
+            <div class="centered"><i class="fas fa-heart fa-2x"></i></div>
+            <br>
             <p>2.他の人の記事にイイネを押して評価をすることができます。</p>
+            <br>
+            <div class="centered"><i class="fas fa-lock fa-2x"></i></div>
             <br>
             <p>3.記事を非公開にして、自分だけの日記用として活用することもできます。</p>
             <br>

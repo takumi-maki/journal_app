@@ -2,8 +2,16 @@
     <div class="card">
       <div class="card-img">
         @include('common.post_image_path')
+        
       </div>
+      
       <div class="card-body">
+      @if($post->user->id == Auth::user()->id)
+      <a class="d-flex justify-content-end" rel="nofollow" href="/postsdelete/{{ $post->id }}">
+        <div class="delete-post-icon"></div>
+        <span style="color: #33272a;">delete</span>
+      </a>
+      @endif
         <h5 class="card-title">{{ \Illuminate\Support\Str::limit($post->post_title, 30, '...') }}</h5>
         <p class="card-text p-1">{{ \Illuminate\Support\Str::limit($post->post_introduction, 50, '...') }}</p>
         <a class="card-next" href="{{ action('PostsController@show', $post->id) }}">この記事を読む</a>
@@ -16,6 +24,7 @@
                 @endif
             <span>{{ $post->user->name }}</span>
             </a>
+            
         </div>
       </div>
       <div class="card-footer">
