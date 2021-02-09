@@ -62,3 +62,9 @@ Route::get('/postsdelete/{post_id}', 'PostsController@destroy');
 
 // 記事の詳細ページを表示
 Route::resource('posts', 'PostsController', ['only' => ['show']]);
+
+// likeを押す
+Route::get('/posts/{post_id}/likes', 'LikesController@store');
+
+// likeを消す
+Route::get('/likes/{like_id}', 'LikesController@destroy');

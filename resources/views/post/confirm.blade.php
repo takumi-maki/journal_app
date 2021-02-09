@@ -11,7 +11,7 @@
                 {{ csrf_field() }}
             <div id="top">
                 
-                @include('common.post_image_path')
+                @include('common.card_image_path')
                 <h3 class="post_title mt">{{ $post->post_title }}</h3>
                 
                 @if ($post->post_comment)

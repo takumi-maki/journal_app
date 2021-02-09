@@ -14,13 +14,15 @@
 
         <div class="col-md-9 mt">
             <div id="top">
-                @include('common.post_image_path')
+                @include('common.top_image_path')
                 <h3 class="post_title mt">{{ $post->post_title }}</h3>
+                
                 
                 @if ($post->post_comment)
                 <h6 class="post_comment">{{$post->post_comment }}</h6>
                 @endif
-                <div class="profile-wrap">
+                
+                <div class="profile-wrap mt-4">
                     <a class="no-text-decoration" href="/users/{{ $post->user->id }}">
                         @if ($post->user->profile_photo)
                         <img class="post-profile-icon round-img mr-4" src="{{ secure_asset('storage/user_images/'. $post->user->profile_photo) }}" />
@@ -30,6 +32,27 @@
                     <span>{{ $post->user->name }}</span>
                     </a>
                 </div>
+                
+                @if ($post->likedBy(Auth::user())->count() > 0)
+                <ul class="like-icon" style="text-align: left;">
+                  <li>
+                    <a class="no-text-decoration" data-remote="true" rel="nofollow" data-method="DELETE" href="/likes/{{ $post->likedBy(Auth::user())->firstOrFail()->id }}">
+                      <img src="/images/parts7.png" />
+                      <span>{{$post->likes->count() }} like</span>
+                    </a>
+                  </li>
+                </ul>
+                @else
+                <ul class="like-icon" style="text-align: left;">
+                  <li>
+                    <a class="no-text-decoration" data-remote="true" rel="nofollow" data-method="POST" href="/posts/{{ $post->id }}/likes">
+                      <img src="/images/parts5.png" />
+                      <span>{{$post->likes->count() }} like</span>
+                    </a>
+                  </li>
+                </ul>  
+                @endif
+                
                 <small>投稿日:{{ $post->created_at->format('Y年m月d日') }}</small>
                 <hr>
             </div>

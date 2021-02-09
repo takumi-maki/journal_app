@@ -50,7 +50,7 @@
 <div class="row">
     @foreach ($posts as $post)
     @if($post->post_key == "open" || $user->id == Auth::user()->id)
-    <div class="col-md-4 mb-5">
+    <div class="col-md-6 col-lg-4 mb-5">
         @include('common.card')
     </div>
     @endif
