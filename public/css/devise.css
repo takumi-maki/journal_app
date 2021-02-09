@@ -19,12 +19,7 @@ p {
   white-space: pre-wrap;
   color: #594a4e;
 }
-.devise-card {
-  background: #fffffe;
-  border: none;
-}
 .form-wrap {
-  background: #fffffe;
   width: 100%;
   margin: 3em auto;
   padding: 0 1em;

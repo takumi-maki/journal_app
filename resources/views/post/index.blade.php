@@ -42,12 +42,33 @@
     @endif
   </div>
   <div class="col-lg-5">
-    <h3 class="card-title mt">{{ \Illuminate\Support\Str::limit($headline->post_title, 50, '...') }}</h3>
+    <h3 class="card-title mt">「{{ \Illuminate\Support\Str::limit($headline->post_title, 50, '...') }}」</h3>
     <p class="card-text p-1">{{ \Illuminate\Support\Str::limit($headline->post_first_greeting, 130, '...') }}</p>
     <p class="card-text p-1">{{ \Illuminate\Support\Str::limit($headline->post_introduction, 130, '...') }}</p>
     <a class="card-next" href="{{ action('PostsController@show', $headline->id) }}">この記事を読む</a>
     <p class="card-text p-1">投稿日:{{ $headline->created_at->format('Y年m月d日') }}</p>
-    <div class="profile-wrap">
+    
+    @if ($headline->likedBy(Auth::user())->count() > 0)
+        <ul class="like-icon" style="text-align: left;">
+          <li>
+            <a class="no-text-decoration" data-remote="true" rel="nofollow" data-method="DELETE" href="/likes/{{ $headline->likedBy(Auth::user())->firstOrFail()->id }}">
+              <img src="/images/parts7.png" />
+              <span>{{$headline->likes->count() }} like</span>
+            </a>
+          </li>
+        </ul>
+        @else
+        <ul class="like-icon" style="text-align: left;">
+          <li>
+            <a class="no-text-decoration" data-remote="true" rel="nofollow" data-method="POST" href="/posts/{{ $headline->id }}/likes">
+              <img src="/images/parts5.png" />
+              <span>{{$headline->likes->count() }} like</span>
+            </a>
+          </li>
+        </ul>  
+        @endif
+        
+    <div class="profile-wrap mt-4">
         <a class="no-text-decoration" href="/users/{{ $headline->user->id }}">
             @if ($headline->user->profile_photo)
             <img class="post-profile-icon round-img mr-4" src="{{ secure_asset('storage/user_images/'. $headline->user->profile_photo) }}" />
@@ -58,10 +79,21 @@
         </a>
         <br class="mt">
         <h7>{{ $headline->user->introduction }}</h7>
+        @if($headline->user->id == Auth::user()->id)
+        <ul  class="delete-icon">
+            <li>
+              <a class="no-text-decoration" href="/postsdelete/{{ $headline->id }}">
+                <img src="/images/parts9.png" />
+                <span>delete</span>
+              </a>
+            </li> 
+        </ul>
+        @endif
     </div>
   </div>
 </div>
 @endif
+
 <!-- /.row -->
 
 <!-- Call to Action Well -->

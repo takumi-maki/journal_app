@@ -6,6 +6,7 @@ use App\Post;
 use Auth;
 use App\User;
 use Validator;
+use App\Like;
 
 use Illuminate\Http\Request;
 
@@ -84,7 +85,7 @@ class PostsController extends Controller
             $headline = null;
         }
         
-        return view('post/index', ['posts' => $posts, 'headline' => $headline, $type => 'type']);
+        return view('post/index', ['posts' => $posts, 'headline' => $headline]);
     }
     public function selectType()
     {
@@ -150,7 +151,7 @@ class PostsController extends Controller
     {
         $post = Post::find($post_id);
         $post->delete();
-        return redirect('/');
+        return redirect()->back();
     }
     
     public function show($post_id, User $user)
