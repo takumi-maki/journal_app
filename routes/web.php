@@ -60,6 +60,12 @@ Route::get('/posts/thanks', 'PostsController@complete');
 // 投稿記事を削除する
 Route::get('/postsdelete/{post_id}', 'PostsController@destroy');
 
+// 投稿記事の編集ページを表示
+Route::get('/posts/edit', 'PostsController@edit');
+
+// 投稿記事の更新をする
+Route::post('/posts/update', 'PostsController@update');
+
 // 記事の詳細ページを表示
 Route::resource('posts', 'PostsController', ['only' => ['show']]);
 

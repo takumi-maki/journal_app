@@ -32,6 +32,9 @@
                     <span>{{ $post->user->name }}</span>
                     </a>
                 </div>
+                @if ($post->user_id == Auth::user()->id)
+                    <a class="btn btn-light" href="/posts/edit?id={{ $post->id }}"><small>記事を編集</small><i class="fas fa-pen ml-2"></i></a>
+                @endif
                 
                 @if ($post->likedBy(Auth::user())->count() > 0)
                 <ul class="like-icon" style="text-align: left;">
@@ -64,17 +67,17 @@
                 <p class="mt">{{ $post->post_introduction }}</p>
                 <br>
                 @if ($post->post_information)
-                <h7 class="paragrah">作品の情報</h7>
+                <h7 class="paragrah">インフォメーション</h7>
                 <p class="mt">{{ $post->post_information }}</p>
                 @endif
                 
                 @if ($post->post_character)
-                <h7 class="paragrah">主なキャラクター</h7>
+                <h7 class="paragrah">キャラクター</h7>
                 <p class="mt">{{ $post->post_character }}</p>
                 @endif
                 
                 @if ($post->post_story)
-                <h7 class="paragrah">作品の物語</h7>
+                <h7 class="paragrah">ストーリー</h7>
                 <p class="mt">{{ $post->post_story }}</p>
                 @endif
                 

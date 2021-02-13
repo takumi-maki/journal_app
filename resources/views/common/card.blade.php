@@ -6,8 +6,8 @@
       
       <div class="card-body">
       
-        <h5 class="card-title">「{{ \Illuminate\Support\Str::limit($post->post_title, 30, '...') }}」</h5>
-        <p class="card-text p-1">{{ \Illuminate\Support\Str::limit($post->post_introduction, 50, '...') }}</p>
+        <h5 class="card-title">「{{ \Illuminate\Support\Str::limit($post->post_title, 20, '...') }}」</h5>
+        <p class="card-text p-1">{{ \Illuminate\Support\Str::limit($post->post_introduction, 30, '...') }}</p>
         <a class="card-next" href="{{ action('PostsController@show', $post->id) }}">この記事を読む</a>
         
         @if ($post->likedBy(Auth::user())->count() > 0)

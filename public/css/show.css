@@ -53,6 +53,7 @@
   border: none;
 }
 .card-img {
+  background: #faeee7;
   border: 3px solid #faeee7;
   border-radius: 6px;
   box-sizing: border-box;
