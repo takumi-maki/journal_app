@@ -47,7 +47,7 @@
     <p class="card-text p-1">{{ \Illuminate\Support\Str::limit($headline->post_introduction, 130, '...') }}</p>
     <a class="card-next" href="{{ action('PostsController@show', $headline->id) }}">この記事を読む</a>
     <p class="card-text p-1">投稿日:{{ $headline->created_at->format('Y年m月d日') }}</p>
-    
+    <br>
     @if ($headline->likedBy(Auth::user())->count() > 0)
         <ul class="like-icon" style="text-align: left;">
           <li>

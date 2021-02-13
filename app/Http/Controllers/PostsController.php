@@ -118,7 +118,7 @@ class PostsController extends Controller
             return redirect()->back()->withErrors($validator->errors())->withInput();
         }
         
-        $form = $request->all();
+        // $form = $request->all();
             
         $post = new Post;
         $post->fill($request->all());
@@ -132,7 +132,7 @@ class PostsController extends Controller
         unset($post['_token']);
         
         $request->session()->put('post', $post);
-        // return dd($post);
+
         return view('post/confirm', ['post' => $post]);
     }
     
@@ -158,8 +158,45 @@ class PostsController extends Controller
     {
 
         $post = Post::findOrFail($post_id);
-        return view('post/show', ['post' => $post,'user' => $user]);
+        return view('post/show', ['post' => $post, 'user' => $user]);
         
+    }
+    public function edit(Request $request)
+    {
+        $post = Post::findOrFail($request->id);
+        return view('post/edit', ['post' => $post]);
+        
+    }
+    public function update(Request $request)
+    {
+        $validator = Validator::make($request->all(),[
+            'post_title' => 'required',
+            'post_first_greeting' => 'required',
+            'post_introduction' => 'required',
+            'post_one' => 'required',
+            'post_summary' => 'required',
+            'post_last_greeting' => 'required',
+            'post_image_path' => 'image|max:2048'
+            ]);
+            
+        if($validator->fails()) {
+            // 入力情報を保持したまま前の画面に戻る
+            return redirect()->back()->withErrors($validator->errors())->withInput();
+        }
+        
+        
+        $post = Post::find($request->id);
+        $post->fill($request->all());
+        $post->user_id = Auth::user()->id;
+        if ($request->hasFile('post_image_path')) {
+            $path = $request->file('post_image_path')->store('public/post_images');
+            $post->post_image_path = basename($path);
+        } else {
+            $post->post_image_path = null;
+        }
+        unset($post['_token']);
+        $post->save();
+        return view('post/show', ['post' => $post]);
     }
     
 }

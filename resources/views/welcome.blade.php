@@ -22,7 +22,7 @@
             </div>
             <hr>
             
-            <h6 class="mt">jounal とは</h6>
+            <h6 class="mt">journal とは</h6>
             <p>記事を自由に投稿して閲覧することができるプラットフォームです。
             </p>
             <br>
@@ -44,7 +44,7 @@
             <br>
             <hr>
             
-            <h6 class="mt">jounal の特徴</h6>
+            <h6 class="mt">journal の特徴</h6>
             <div class="centered"><i class="fas fa-pen fa-2x"></i></div>
             <br>
             <p>1.フレームワークに沿って文章を書けば、1000文字以上の記事を簡単につくれます。</p>
@@ -59,7 +59,7 @@
             <br>
             <hr>
             
-            <h6 class="mt">jounal の思い</h6>
+            <h6 class="mt">journal の思い</h6>
             <p>文章を書くのが苦手な方でも、手軽に記事が書けるようなアプリをつくりました。</p>
             <p>SNSのタイムラインに流すような短い文章ではなく、会社や学校に提出するようなWEBのコピペの文章でもない。</p>
             <p>思い出の詰まった、あなただけの大切な記事を投稿してみてください。</p>

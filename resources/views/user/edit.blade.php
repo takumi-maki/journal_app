@@ -48,7 +48,7 @@
                     </div>
                     <br>
                     <div class="button-panel">
-                        <input type="submit" class="button" title="edit" value="to edit" data-disable-with="変更する" />
+                        <input type="submit" class="button" title="edit" value="変更する" data-disable-with="変更する" />
                     </div>
                     <br>
                 </form>
