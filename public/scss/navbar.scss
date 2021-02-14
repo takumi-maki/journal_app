@@ -1,34 +1,37 @@
+
 .navbar {
-  background-color: #FFE3ED;
-  border-bottom: 1px solid #FFFFFF;
-  height: 77px;
-  &__brand {
-    height: 50px;
-    width: 50px;
-    margin-bottom: 10px;
-    background-size: 50px;
-    
-  }
-  &__mainLogo {
-    background-repeat: no-repeat;
-    background-image: url("/images/diary_logo.png");
-    
-  }
-  &__title {
-    margin-top: 15px;
-    margin-left: 10px;
-    font-size: 23px;
-    letter-spacing: 2px;
-    
-  }
-  &-nav {
-    & > li {
-      background-color: #FFFFFF;
-      margin-left: 20px;
-      margin-top: 20px;
-      &:first-child {
-        margin-left: 0;
-      }
-    }
-  }
+    background-color: #fffffe;
+}
+.navbar-light .navbar-toggler {
+    border-color: rgba(0,0,0,0);
+    outline: none;
+}
+
+// カテゴリーの検索バナーのデザイン
+.site-navbar {
+	margin-bottom: 0px;
+	z-index: 1999;
+	width: 100%;
+	background: #fffffe;
+
+	font-family: "B612 Mono", monospace;
+	.site-navigation {
+		.site-menu li {
+			display: inline-block;
+		}
+	}
+}
+.nav-type {
+	background: #fffffe;
+	border: none;
+	color: #8c8c8c;
+	padding: 1.5em;
+    position: relative;
+    outline: none;
+    text-transform: uppercase;
+    transition: .3s;
+	letter-spacing: .05rem;
+	&:hover {
+        color: #594a4e;
+	}
 }

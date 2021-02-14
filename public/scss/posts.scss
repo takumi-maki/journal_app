@@ -1,0 +1,210 @@
+.profile-wrap {
+    vartical-align: middle;
+}
+.post-profile-icon {
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    margin: auto;
+}
+.headline-img {
+    background: #faeee7;
+    border: 3px solid #faeee7;
+    border-radius: 6px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+.top-img {
+    background: #faeee7;
+    border: 3px solid #faeee7;
+    border-radius: 6px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.nav-item a {
+    color: #33272a;
+    position: relative;
+    display: inline-block;
+    transition: .3s;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    margin: 10px;
+    background-color: #faeee7;
+}
+
+.nav-item a:after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: #faeee7;
+    transition: .3s;
+    transform: translateX(-50%);
+    }
+
+.nav-item a:hover:after {
+    width: 100%;
+}
+// タイトルのデザイン
+.post_title {
+  position: relative;
+  line-height: 1.4;
+  padding: 0.25em 1em;
+  display: inline-block;
+}
+
+.post_title:before, .post_title:after { 
+  content:'';
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  display: inline-block;
+}
+
+.post_title:before {
+  border-left: solid 2px #ffc6c7;
+  border-top: solid 2px #ffc6c7;
+  top: 0;
+  left: 0;
+}
+
+.post_title:after {
+  border-right: solid 2px #ffc6c7;
+  border-bottom: solid 2px #ffc6c7;
+  bottom: 0;
+  right: 0;
+}
+
+
+// 帯コメントの吹き出しデザイン
+.post_comment {
+    position: relative;
+    padding: 0.6em;
+    background: -webkit-repeating-linear-gradient(-45deg, #faeee7, #faeee7 4px,#fffffe 3px, #fffffe 8px);
+    background: repeating-linear-gradient(-45deg, #faeee7, #faeee7 4px,#fffffe 3px, #fffffe 8px);
+    border-radius: 3px;
+}
+.post_comment:after {
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 10px;
+  border: 15px solid transparent;
+  border-top: 15px solid #faeee7;
+  width: 0;
+  height: 0;
+}
+
+.no-text-decoration {
+    color: #8c8c8c;
+}
+.no-text-decoration:hover {
+    text-decoration: none;
+    color: #594a4e;
+    
+}
+
+// 段落の見出しデザイン
+.paragrah {
+    padding: 0.25em 1em;/*上下 左右の余白*/
+    background: transparent;/*背景透明に*/
+    border-left: solid 5px #faeee7;/*左線*/
+    margin: 1em 0 0.5em;
+}
+/*全体*/
+.hidden_box {
+    margin: 2em 0;
+    padding: 0;
+}
+
+/*ボタン装飾*/
+.hidden_box label {
+    margin: 1em 0 0.5em;
+    display: inline-block;
+    font-weight: 900;
+    color: #594a4e;
+}
+
+/*アイコンを表示*/
+.hidden_box label:before {
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    content: '\f078';
+    padding-right: 5px;
+    transition: 0.2s;
+}
+
+/*ボタンホバー時*/
+.hidden_box label:hover {
+    color: #594a4e;
+    border-bottom: 2px solid #faeee7;
+    
+}
+
+/*アイコンを切り替え*/
+.hidden_box input:checked + label:before {
+     content: '\f00d';
+     -ms-transform: rotate(360deg);
+     -webkit-transform: rotate(360deg);
+     transform: rotate(360deg);
+     color: #594a4e;
+}
+
+/*チェックは見えなくする*/
+.hidden_box input {
+    display: none;
+}
+
+/*中身を非表示にしておく*/
+.hidden_box .hidden_show {
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.8s;
+}
+
+/*クリックで中身表示*/
+.hidden_box input:checked + label + .hidden_show {
+    padding: 10px 0;
+    height: auto;
+    opacity: 1;
+}
+.delete-icon {
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    padding-left: 1em;
+    text-indent: -1em;
+}
+
+.delete-icon img{
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    background-size: 20px !important;
+    color: #33272a;
+    font-size: 20px;
+}
+.like-icon {
+    list-style: none;
+    text-align: center;
+    margin: 20px 10px 10px;
+    padding-left: 1em;
+    text-indent: -1em;
+}
+
+.like-icon img {
+    background-repeat: no-repeat;
+    height: 20px;
+    width: 20px;
+    background-size: 20px !important;
+}

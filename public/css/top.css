@@ -1,0 +1,22 @@
+.top-wrap {
+  width: 100%;
+  margin: 3em auto;
+  padding: 1em 1em;
+  max-width: 360px;
+}
+.post-type img {
+  border-radius: 5px;
+  width: 100%;
+  min-height: 160px;
+  max-height: 172px;
+  margin-bottom: 3em;
+}
+.top-logo-img {
+  width: 150px;
+  margin: 50px auto 50px;
+}
+.top-page-img {
+  width: 100%;
+  border: solid 3px #fffffe;
+  border-radius: 5px;
+}
