@@ -91,13 +91,41 @@ class PostsController extends Controller
     {
         return view('post/select');
     }
+    public function newBook() 
+    {
+        return view('post/new/book');
+    }
+    public function newBusiness() 
+    {
+        return view('post/new/business');
+    }
+    public function newDaily() 
+    {
+        return view('post/new/daily');
+    }
+    public function newHobby()
+    {
+        return view('post/new/hobby');
+    }
     public function newMovie() 
     {
         return view('post/new/movie');
     }
-    public function newBook()
+    public function newSociety() 
     {
-        return view('post/new/book');
+        return view('post/new/society');
+    }
+    public function newSport() 
+    {
+        return view('post/new/sport');
+    }
+    public function newStudy()
+    {
+        return view('post/new/study');
+    }
+    public function newTravel()
+    {
+        return view('post/new/travel');
     }
 
     public function confirm(Request $request)
