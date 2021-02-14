@@ -6,7 +6,7 @@
     <div class="card devise-card">
         <div class="form-group">
             <h4 align="center">write</h4>
-            <p class="text-center">映画を観て思ったことを書きましょう。</p>
+            <p class="text-center">旅行へ出かけて思ったことを書きましょう。</p>
             <form class="new_post" enctype="multipart/form-data" action="{{ action('PostsController@confirm') }}" accept-charset="UTF-8" method="post">
                 {{ csrf_field() }}
                 <input type="hidden" name="post_type" value="movie" />
@@ -19,7 +19,7 @@
                 <div class="form-item">
                     <label for="post_title">必須<i class="fas fa-check-square ml-1 mr-1"></i>：タイトル</label>
                     <textarea rows="2" text="text" name="post_title">{{ old('post_title') }}</textarea>
-                    <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：映画のタイトルを教えてくれますか？)</small>
+                    <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：タイトルを教えてくれますか？)</small>
                 </div>
                 <br>
                 <div class="form-item">
@@ -31,47 +31,42 @@
                 <div class="form-item">
                     <label for="post_introduction">必須<i class="fas fa-check-square ml-1 mr-1"></i>：話題の導入</label>
                     <textarea rows="5" text="text" name="post_introduction">{{ old('post_introduction') }}</textarea>
-                    <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：なぜその映画を観たのですか？　誰と一緒に観ましたか？ どこで観ましたか？　等)</small>
+                    <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：なぜ旅行に出かけたのですか？　なぜその場所を選んだのですか？　等)</small>
                 </div>
                 <br>
                 <div class="form-item">
-                    <label for="post_information">映画の概要</label>
+                    <label for="post_information">旅行の概要</label>
                     <textarea rows="5" text="text" name="post_information">{{ old('post_information') }}</textarea> 
-                    <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：監督は誰ですか？　原作はありますか？)</small>
+                    <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：旅行のスケジュール　その場所の説明　等)</small>
                 </div>
                 <br>
                 <div class="form-item">
-                    <label for="post_character">主要キャラクター</label>
+                    <label for="post_character">旅行中の登場人物</label>
                     <textarea rows="5" text="text" name="post_character">{{ old('post_character') }}</textarea> 
-                    <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：目立ったキャラクターは居ましたか？)</small>
+                    <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：登場人物が居たら教えてもらえますか？)</small>
                 </div>
                 <br>
                 <div class="form-item">
-                    <label for="post_story">作品の物語</label>
+                    <label for="post_story">旅行の出来事</label>
                     <textarea rows="5" text="text" name="post_story">{{ old('post_story') }}</textarea>
-                    <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：どんな内容の物語でしたか？)</small>
+                    <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：具体的に何が起こったのか教えてもらえますか？)</small>
                 </div>
                 <br>
+                
                 <div class="form-item">
-                    <label for="post_spoiler">作品のネタバレ</label>
-                    <textarea rows="5" text="text" name="post_spoiler">{{ old('post_spoiler') }}</textarea> 
-                    <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：最後のオチも教えてもらえますか？)</small>
-                </div>
-                <br>
-                <div class="form-item">
-                    <label for="post_one">必須<i class="fas fa-check-square ml-1 mr-1"></i>：映画をみて思ったことや気付いたこと①</label>
+                    <label for="post_one">必須<i class="fas fa-check-square ml-1 mr-1"></i>：そのことで思ったことや気付いたこと①</label>
                     <textarea rows="10" text="text" name="post_one">{{ old('post_one') }}</textarea>
                     <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：1つめの感想とそう思った理由を教えてくれますか？)</small>
                 </div>
                 <br>
                 <div class="form-item">
-                    <label for="post_two">映画をみて思ったことや気付いたこと②</label>
+                    <label for="post_two">そのことで思ったことや気付いたこと②</label>
                     <textarea rows="10" text="text" name="post_two">{{ old('post_two') }}</textarea>
                     <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：2つめの感想とそう思った理由を教えてくれますか？)</small>
                 </div>
                 <br>
                 <div class="form-item">
-                    <label for="post_three">映画をみて思ったことや気付いたこと③</label>
+                    <label for="post_three">そのことで思ったことや気付いたこと③</label>
                     <textarea rows="10" text="text" name="post_three">{{ old('post_three') }}</textarea>
                     <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：3つめの感想とそう思った理由を教えてくれますか？)</small>
                 </div>
@@ -79,7 +74,7 @@
                 <div class="form-item">
                     <label for="post_summary">必須<i class="fas fa-check-square ml-1 mr-1"></i>：まとめ</label>
                     <textarea rows="5" text="text" name="post_summary">{{ old('post_summary') }}</textarea>
-                    <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：映画を観た感想を簡単にまとめてみてください。)</small>
+                    <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：簡単にまとめてみてください。)</small>
                 </div>
                 <br>
                 <div class="form-item">
@@ -91,7 +86,7 @@
                 <div class="form-item">
                     <label for="post_last_greeting">帯コメント</label>
                     <textarea rows="2" text="text" name="post_comment">{{ old('post_comment') }}</textarea>
-                    <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：映画の内容についての帯コメを書いてくれませんか？)</small>
+                    <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：帯コメも書いてくれませんか？)</small>
                 </div>
                 <br>
                 <div class="radio-container">

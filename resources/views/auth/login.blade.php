@@ -25,7 +25,6 @@
             <div class="form-footer">
                 <p><a href="{{ route('register') }}">アカウントをつくる</a></p>
                 <br>
-                <p><a href="admin/login">管理者ログインページ</a></p>
             </div>
             
             

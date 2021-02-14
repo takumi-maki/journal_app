@@ -44,9 +44,15 @@ Route::get('/users/{user_id}', 'UsersController@show');
 Route::get('/posts/select', 'PostsController@selectType');
 
 // post_type別の投稿画面を表示
-Route::get('/posts/new/movie', 'PostsController@newMovie');
-
 Route::get('/posts/new/book', 'PostsController@newBook');
+Route::get('/posts/new/business', 'PostsController@newBusiness');
+Route::get('/posts/new/daily', 'PostsController@newDaily');
+Route::get('/posts/new/hobby', 'PostsController@newHobby');
+Route::get('/posts/new/movie', 'PostsController@newMovie');
+Route::get('/posts/new/society', 'PostsController@newSociety');
+Route::get('/posts/new/sport', 'PostsController@newSport');
+Route::get('/posts/new/study', 'PostsController@newStudy');
+Route::get('/posts/new/travel', 'PostsController@newTravel');
 
 // 確認ページでセッションに$postを保持
 Route::post('/posts/confirm', 'PostsController@confirm');

@@ -7,7 +7,7 @@
             <ul class="list-group">
                 @foreach($user_list as $user)
                 <li class="list-group-item">
-                    <a href="{{ url('admin/user/'. $user->id) }}">
+                    <a href="{{ url('admin/user/'. $user->id) }}" class="card-next">
                         {{ $user->name }}
                     </a>
                 </li>
