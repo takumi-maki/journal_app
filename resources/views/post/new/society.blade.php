@@ -9,7 +9,7 @@
             <p class="text-center">社会について思ったことを書きましょう。</p>
             <form class="new_post" enctype="multipart/form-data" action="{{ action('PostsController@confirm') }}" accept-charset="UTF-8" method="post">
                 {{ csrf_field() }}
-                <input type="hidden" name="post_type" value="movie" />
+                <input type="hidden" name="post_type" value="society" />
                 <div class="form-group">
                     <label for="post_image_path">画像や写真を貼る</label><br>
                     <i class="far fa-hand-point-right "></i><small class="text-secondary">　(ヒント：画像や写真がなければこちらで指定した画像を挿入します。画像ファイルのサイズは2MBまでです。)<br></small>
@@ -35,9 +35,9 @@
                 </div>
                 <br>
                 <div class="form-item">
-                    <label for="post_information">その社会の問題について</label>
+                    <label for="post_information">その社会の問題についての概要</label>
                     <textarea rows="5" text="text" name="post_information">{{ old('post_information') }}</textarea> 
-                    <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：その問題について説明や背景があれば教えてください。)</small>
+                    <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：その問題について概要や背景があれば教えてください。)</small>
                 </div>
                 <br>
                 <div class="form-item">
