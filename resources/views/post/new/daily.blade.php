@@ -9,7 +9,7 @@
             <p class="text-center">日常を過ごしてて思ったことを書きましょう。</p>
             <form class="new_post" enctype="multipart/form-data" action="{{ action('PostsController@confirm') }}" accept-charset="UTF-8" method="post">
                 {{ csrf_field() }}
-                <input type="hidden" name="post_type" value="movie" />
+                <input type="hidden" name="post_type" value="daily" />
                 <div class="form-group">
                     <label for="post_image_path">画像や写真を貼る</label><br>
                     <i class="far fa-hand-point-right "></i><small class="text-secondary">　(ヒント：画像や写真がなければこちらで指定した画像を挿入します。画像ファイルのサイズは2MBまでです。)<br></small>

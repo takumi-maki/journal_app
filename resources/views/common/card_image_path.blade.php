@@ -1,5 +1,5 @@
 @if($post->post_image_path)
-    <img src="{{ secure_asset('storage/post_images/'. $post->post_image_path) }}" alt="card_img" class="card-img" />
+    <img src="{{ $post->post_image_path }}" alt="card_img" class="card-img" />
 
 @elseif ($post->post_image_path == null && $post->post_type == "book")    
     <img src="{{ secure_asset('/images/book.jpg' ) }}" alt="card_img" class="card-img" /> 
