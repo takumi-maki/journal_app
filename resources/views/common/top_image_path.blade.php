@@ -1,5 +1,5 @@
 @if($post->post_image_path)
-    <img src="{{ secure_asset('storage/post_images/'. $post->post_image_path) }}" alt="top_img" class="top-img" />
+    <img src="{{ $post->post_image_path) }}" alt="top_img" class="top-img" />
 
 @elseif ($post->post_image_path == null && $post->post_type == "book")    
     <img src="{{ secure_asset('/images/book.jpg' ) }}" alt="top_img" class="top-img" /> 

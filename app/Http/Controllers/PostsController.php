@@ -7,6 +7,7 @@ use Auth;
 use App\User;
 use Validator;
 use App\Like;
+use Storage;
 
 use Illuminate\Http\Request;
 
@@ -146,14 +147,16 @@ class PostsController extends Controller
             return redirect()->back()->withErrors($validator->errors())->withInput();
         }
         
-        // $form = $request->all();
-            
         $post = new Post;
         $post->fill($request->all());
         $post->user_id = Auth::user()->id;
         if ($request->hasFile('post_image_path')) {
-            $path = $request->file('post_image_path')->store('public/post_images');
-            $post->post_image_path = basename($path);
+            $path = Storage::disk('s3')->putFile('/', $request->file('post_image_path'), 'public');
+            $post->post_image_path = Storage::disk('s3')->url($path);
+            
+            // ローカル環境時の画像の保存
+            // $path = $request->file('post_image_path')->store('public/post_images');
+            // $post->post_image_path = basename($path);
         } else {
             $post->post_image_path = null;
         }
@@ -212,13 +215,12 @@ class PostsController extends Controller
             return redirect()->back()->withErrors($validator->errors())->withInput();
         }
         
-        
         $post = Post::find($request->id);
         $post->fill($request->all());
         $post->user_id = Auth::user()->id;
         if ($request->hasFile('post_image_path')) {
-            $path = $request->file('post_image_path')->store('public/post_images');
-            $post->post_image_path = basename($path);
+            $path = Storage::disk('s3')->putFile('/', $request->file('post_image_path'), 'public');
+            $post->post_image_path = Storage::disk('s3')->url($path);
         } else {
             $post->post_image_path = null;
         }
