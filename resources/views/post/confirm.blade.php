@@ -38,17 +38,17 @@
                 <p class="mt">{{ $post->post_introduction }}</p>
                 <br>
                 @if ($post->post_information)
-                <h7 class="paragrah">作品の情報</h7>
+                <h7 class="paragrah">インフォメーション</h7>
                 <p class="mt">{{ $post->post_information }}</p>
                 @endif
                 
                 @if ($post->post_character)
-                <h7 class="paragrah">主なキャラクター</h7>
+                <h7 class="paragrah">キャラクター</h7>
                 <p class="mt">{{ $post->post_character }}</p>
                 @endif
                 
                 @if ($post->post_story)
-                <h7 class="paragrah">作品の物語</h7>
+                <h7 class="paragrah">ストーリー</h7>
                 <p class="mt">{{ $post->post_story }}</p>
                 @endif
                 
