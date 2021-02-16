@@ -25,7 +25,7 @@
         <div class="row centered">
             <div class="col">
                 @if ($user->profile_photo)
-                <img class="round-img" src="{{ secure_asset('storage/user_images/'. $user->profile_photo) }}" />
+                <img class="round-img" src="{{ $user->profile_photo }}" />
                 @else
                 <img class="round-img" src="{{ secure_asset('/images/blank_profile.png') }}" />
                 @endif

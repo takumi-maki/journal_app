@@ -10,7 +10,7 @@
   <div class="col-lg-7">
     <h6 style="text-align: left;">{{ $headline->post_type }}</h6>
     @if($headline->post_image_path)
-    <img src="{{ $headline->post_image_path }}" alt="post_img" class="headline-img" />
+    <img src="{{ $headline->post_image_path }}" alt="headline_img" class="headline-img" />
     
     @elseif ($headline->post_image_path == null && $headline->post_type == "book")    
         <img src="{{ secure_asset('/images/book.jpg' ) }}" alt="post_img" class="headline-img" /> 
@@ -71,16 +71,16 @@
     <div class="profile-wrap mt-4">
         <a class="no-text-decoration" href="/users/{{ $headline->user->id }}">
             @if ($headline->user->profile_photo)
-            <img class="post-profile-icon round-img mr-4" src="{{ secure_asset('storage/user_images/'. $headline->user->profile_photo) }}" />
+            <img class="post-profile-icon round-img mr-4" src="{{ $headline->user->profile_photo }}" />
             @else 
             <img class="post-profile-icon round-img mr-4" src="{{ secure_asset('/images/blank_profile.png') }}" />
             @endif
         <span>{{ $headline->user->name }}</span>
         </a>
-        <br class="mt">
+        <br>
         <h7>{{ $headline->user->introduction }}</h7>
         @if($headline->user->id == Auth::user()->id)
-        <ul class="delete-icon" style="text-align: left;">
+        <ul  class="delete-icon mt-3" style="text-align: left;">
             <li>
               <a class="no-text-decoration" href="/postsdelete/{{ $headline->id }}">
                 <img src="/images/parts9.png" />

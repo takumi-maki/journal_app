@@ -153,6 +153,11 @@ class PostsController extends Controller
         if ($request->hasFile('post_image_path')) {
             $path = Storage::disk('s3')->putFile('/', $request->file('post_image_path'), 'public');
             $post->post_image_path = Storage::disk('s3')->url($path);
+<<<<<<< HEAD
+=======
+            
+            // ローカル環境時の画像の保存
+>>>>>>> 7917fc52736afd301c1bdd3e3c7e507fa9e25c38
             // $path = $request->file('post_image_path')->store('public/post_images');
             // $post->post_image_path = basename($path);
         } else {
