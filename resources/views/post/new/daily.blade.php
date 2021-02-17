@@ -42,7 +42,7 @@
                 </div>
                 <br>
                 <div class="form-item">
-                    <label for="post_story">その日常の出来事</label>
+                    <label for="post_story">日常の出来事</label>
                     <textarea rows="5" text="text" name="post_story">{{ old('post_story') }}</textarea>
                     <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：具体的に何が起こったのか教えてもらえますか？)</small>
                 </div>

@@ -35,7 +35,7 @@
                 </div>
                 <br>
                 <div class="form-item">
-                    <label for="post_information">その趣味について</label>
+                    <label for="post_information">その趣味についての概要</label>
                     <textarea rows="5" text="text" name="post_information">{{ old('post_information') }}</textarea> 
                     <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：その趣味について説明があれば教えてください。)</small>
                 </div>
@@ -47,7 +47,7 @@
                 </div>
                 <br>
                 <div class="form-item">
-                    <label for="post_story">その話の物語</label>
+                    <label for="post_story">その趣味をしてた時の出来事</label>
                     <textarea rows="5" text="text" name="post_story">{{ old('post_story') }}</textarea>
                     <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：具体的に何が起こったのか教えてもらえますか？)</small>
                 </div>
