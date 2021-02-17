@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
   <head>
-    <title>{{ config('app.name', 'journal_app') }}</title>
+    <title>{{ config('app.name') }}</title>
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- スマホの拡大縮小設定　intital-scale=1拡大しない画面 -->

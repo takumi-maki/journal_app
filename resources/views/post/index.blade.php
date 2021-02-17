@@ -40,6 +40,7 @@
         <img src="{{ secure_asset('/images/travel.jpg' ) }}" alt="post_img" class="headline-img" /> 
     
     @endif
+    
   </div>
   <div class="col-lg-5">
     <h3 class="card-title mt">「{{ \Illuminate\Support\Str::limit($headline->post_title, 50, '...') }}」</h3>
