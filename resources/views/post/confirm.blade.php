@@ -17,7 +17,7 @@
                 @if ($post->post_comment)
                 <h6 class="post_comment">{{$post->post_comment }}</h6>
                 @endif
-                <div class="profile-wrap">
+                <div class="profile-wrap mt-4">
                     <a class="no-text-decoration" href="/users/{{ $post->user->id }}">
                         @if ($post->user->profile_photo)
                         <img class="post-profile-icon round-img mr-4" src="{{ $post->user->profile_photo }}" />

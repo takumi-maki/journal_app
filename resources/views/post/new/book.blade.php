@@ -18,13 +18,13 @@
                 </div>
                 <div class="form-item">
                     <label for="post_title">必須<i class="fas fa-check-square ml-1 mr-1"></i>：タイトル</label>
-                    <textarea rows="4" text="text" name="post_title">{{ old('post_title') }}</textarea>
+                    <textarea rows="5" text="text" name="post_title">{{ old('post_title') }}</textarea>
                     <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：本のタイトルを教えてくれますか？)</small>
                 </div>
                 <br>
                 <div class="form-item">
                     <label for="post_first_greeting">必須<i class="fas fa-check-square ml-1 mr-1"></i>：はじめのあいさつ</label>
-                    <textarea rows="4" text="text" name="post_first_greeting">{{ old('post_first_greeting') }}</textarea> 
+                    <textarea rows="5" text="text" name="post_first_greeting">{{ old('post_first_greeting') }}</textarea> 
                     <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：簡単で良いので、自己紹介と近況を教えてくれますか？)</small>
                 </div>
                 <br>
@@ -84,13 +84,13 @@
                 <br>
                 <div class="form-item">
                     <label for="post_last_greeting">必須<i class="fas fa-check-square ml-1 mr-1"></i>：最後のあいさつ</label>
-                    <textarea rows="4" text="text" name="post_last_greeting">{{ old('post_last_greeting') }}</textarea>
+                    <textarea rows="5" text="text" name="post_last_greeting">{{ old('post_last_greeting') }}</textarea>
                     <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：締めのあいさつをしていただけますか？)</small>
                 </div>
                 <br>
                 <div class="form-item">
                     <label for="post_last_greeting">帯コメント</label>
-                    <textarea rows="4" text="text" name="post_comment">{{ old('post_comment') }}</textarea>
+                    <textarea rows="5" text="text" name="post_comment">{{ old('post_comment') }}</textarea>
                     <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：本の内容についての帯コメを書いてくれませんか？)</small>
                 </div>
                 <br>
