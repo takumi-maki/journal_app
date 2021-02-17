@@ -32,7 +32,7 @@
                 <div class="profile-wrap mt-4">
                     <a class="no-text-decoration" href="/users/{{ $post->user->id }}">
                         @if ($post->user->profile_photo)
-                        <img class="post-profile-icon round-img mr-4" src="{{ secure_asset( $post->user->profile_photo }}" />
+                        <img class="post-profile-icon round-img mr-4" src="{{ $post->user->profile_photo }}" />
                         @else 
                         <img class="post-profile-icon round-img mr-4" src="{{ secure_asset('/images/blank_profile.png') }}" />
                         @endif
