@@ -60,19 +60,19 @@
                 <br>
                 <div class="form-item">
                     <label for="post_one">必須<i class="fas fa-check-square ml-1 mr-1"></i>：本を読んで思ったことや気付いたこと①</label>
-                    <textarea rows="20" text="text" name="post_one">{{ old('post_one') }}</textarea>
+                    <textarea rows="15" text="text" name="post_one">{{ old('post_one') }}</textarea>
                     <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：1つめの感想とそう思った理由を教えてくれますか？)</small>
                 </div>
                 <br>
                 <div class="form-item">
                     <label for="post_two">本を読んで思ったことや気付いたこと②</label>
-                    <textarea rows="20" text="text" name="post_two">{{ old('post_two') }}</textarea>
+                    <textarea rows="15" text="text" name="post_two">{{ old('post_two') }}</textarea>
                     <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：2つめの感想とそう思った理由を教えてくれますか？)</small>
                 </div>
                 <br>
                 <div class="form-item">
                     <label for="post_three">本を読んで思ったことや気付いたこと③</label>
-                    <textarea rows="20" text="text" name="post_three">{{ old('post_three') }}</textarea>
+                    <textarea rows="15" text="text" name="post_three">{{ old('post_three') }}</textarea>
                     <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：3つめの感想とそう思った理由を教えてくれますか？)</small>
                 </div>
                 <br>
