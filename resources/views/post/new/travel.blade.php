@@ -43,7 +43,7 @@
                 <div class="form-item">
                     <label for="post_character">旅行中の登場人物</label>
                     <textarea rows="10" text="text" name="post_character">{{ old('post_character') }}</textarea> 
-                    <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：登場人物が居たら教えてもらえますか？)</small>
+                    <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：誰と一緒に旅行に行ったのですか？　旅行中どんな人に出会いましたか？　等)</small>
                 </div>
                 <br>
                 <div class="form-item">

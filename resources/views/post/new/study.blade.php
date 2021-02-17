@@ -31,7 +31,7 @@
                 <div class="form-item">
                     <label for="post_introduction">必須<i class="fas fa-check-square ml-1 mr-1"></i>：話題の導入</label>
                     <textarea rows="10" text="text" name="post_introduction">{{ old('post_introduction') }}</textarea>
-                    <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：なぜそれを学ぼうとしたのですか？　どんなことをアウトプットしたいです？　等)</small>
+                    <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：なぜそれを学ぼうとしたのですか？　どんなことをアウトプットしたいですか？　等)</small>
                 </div>
                 <br>
                 <div class="form-item">

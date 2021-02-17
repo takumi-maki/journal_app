@@ -92,9 +92,12 @@ p {
 .button-panel .button:hover {
     background: #ff8ba7;
 }
+.post-button-panel {
+    text-align: center;
+}
 
 .post-button-panel .button {
-    margin: 0 auto;
+    margin: 2em;
     background: #ffc6c7;
     border: none;
     border-radius: 5px;
@@ -103,7 +106,6 @@ p {
     width: 120px;
     font-size: 1.2em;
     letter-spacing: 0.05em;
-    text-align: center;
     text-transform: capitalize;
     transition: background 0.3s ease-in-out;
     padding: 0.5em;

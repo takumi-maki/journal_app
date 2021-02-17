@@ -35,7 +35,7 @@
                 </div>
                 <br>
                 <div class="form-item">
-                    <label for="post_information">その運動について</label>
+                    <label for="post_information">その運動についての概要</label>
                     <textarea rows="10" text="text" name="post_information">{{ old('post_information') }}</textarea> 
                     <i class="far fa-hand-point-right"></i><small class="text-secondary">　(ヒント：運動についてのスケジュールや説明があれば教えてくれますか？)</small>
                 </div>

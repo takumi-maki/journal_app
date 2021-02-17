@@ -84,6 +84,10 @@
                     <p class="mt">{{ $post->post_last_greeting }}</p>
                 </div>
             </div>
+            <div class="col post-button-panel">
+                <button type="button" class="button" name="back" onclick=history.back()><i class="fas fa-chevron-left mr-2"></i>戻る</button>
+                <button type="submit" class="button" name="submit">投稿する<i class="fas fa-chevron-right ml-2"></i></button>
+            </div>
         </div>
         <nav class="col-md-3 d-none d-md-block" id="scrollspy">
             <ul class="nav nav nav-pills flex-column sticky-top">
@@ -93,10 +97,7 @@
                 <li class="nav-item"><a href="#summary" class="nav-link">まとめ</a></li>
             </ul>
         </nav>
-            <div class="col post-button-panel">
-                <button type="button" class="button" name="back" onclick=history.back()><i class="fas fa-chevron-left mr-2"></i>戻る</button>
-                <button type="submit" class="button" name="submit">投稿する<i class="fas fa-chevron-right ml-2"></i></button>
-            </div>
+        
         </form>
     </div>
     
