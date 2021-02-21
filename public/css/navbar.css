@@ -19,12 +19,11 @@
   background: #fffffe;
   border: none;
   color: #8c8c8c;
-  padding: 1.5em;
+  padding: 0.8em;
   position: relative;
   outline: none;
   text-transform: uppercase;
   transition: 0.3s;
-  letter-spacing: 0.05rem;
 }
 .nav-type:hover {
   color: #594a4e;

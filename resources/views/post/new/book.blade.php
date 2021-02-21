@@ -13,7 +13,6 @@
                 <div class="form-group">
                     <label for="post_image_path">画像や写真を貼る</label><br>
                     <i class="far fa-hand-point-right "></i><small class="text-secondary">　(ヒント：画像や写真がなければこちらで指定した画像を挿入します。画像ファイルのサイズは2MBまでです。)<br></small>
-                    
                     <input type="file" name="post_image_path" accept="image/jpeg, image/gif, image/png, image/jpg" />
                 </div>
                 <div class="form-item">

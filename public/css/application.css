@@ -19,12 +19,11 @@
   background: #fffffe;
   border: none;
   color: #8c8c8c;
-  padding: 1.5em;
+  padding: 0.8em;
   position: relative;
   outline: none;
   text-transform: uppercase;
   transition: 0.3s;
-  letter-spacing: 0.05rem;
 }
 .nav-type:hover {
   color: #594a4e;
@@ -491,6 +490,7 @@ a.card-next:hover {
   margin: 50px auto 50px;
 }
 .top-page-img {
+  background-color: #fffffe;
   width: 100%;
   border: solid 3px #fffffe;
   border-radius: 5px;

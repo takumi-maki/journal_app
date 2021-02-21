@@ -6,7 +6,7 @@
 <div class="main">
     <div class="row">
         <div class="col">
-        <h5>編集する</h5>
+        <h5>投稿記事の編集</h5>
             <form class="edit_post" enctype="multipart/form-data" action="/posts/update" accept-charset="UTF-8" method="post">
                 <input name="utf8" type="hidden" value="&#x2713;" />
                 <input type="hidden" name="id" value="{{ $post->id }}" />
@@ -14,7 +14,7 @@
                 <div class="form-group">
                     @include('common.card_image_path')
                     <label for="post_image_path">画像を変更する</label><br>
-                    <input type="file" name="post_image_path"  value="{{ old('post_image_path',$post->id) }}" accept="image/jpeg,image/gif,image/png" />
+                    <input type="file" name="post_image_path"  accept="image/jpeg,image/gif,image/png" />
                 </div>
                 
                 <div class="profile-wrap mt-4">

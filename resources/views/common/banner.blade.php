@@ -20,7 +20,7 @@
                 <input class="nav-type" type="submit" name="type" value="hobby" />
               </li>
               <li>
-                <input class="nav-type" type="submit" name="type" value="leaning" />
+                <input class="nav-type" type="submit" name="type" value="study" />
               </li>
               <li>
                 <input class="nav-type" type="submit" name="type" value="movie" />

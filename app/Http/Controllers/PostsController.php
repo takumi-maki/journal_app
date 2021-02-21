@@ -47,9 +47,9 @@ class PostsController extends Controller
                 ['post_key', 'open']
                 ]);
         }
-        elseif($type == 'leaning'){
+        elseif($type == 'study'){
             $posts = Post::where([
-                ['post_type', 'leaning'],
+                ['post_type', 'study'],
                 ['post_key', 'open']
                 ]);
         }
@@ -221,8 +221,6 @@ class PostsController extends Controller
         if ($request->hasFile('post_image_path')) {
             $path = Storage::disk('s3')->putFile('/', $request->file('post_image_path'), 'public');
             $post->post_image_path = Storage::disk('s3')->url($path);
-        } else {
-            $post->post_image_path = null;
         }
         unset($post['_token']);
         $post->save();
