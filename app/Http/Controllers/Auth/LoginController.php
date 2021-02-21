@@ -38,7 +38,7 @@ class LoginController extends Controller
     }
     protected function redirectTo()
     {
-        return '/welcome';
+        return '/';
     }
    
    
